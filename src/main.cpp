@@ -4,12 +4,14 @@
 #include "raylib.h"
 #include "Game.h"
 
+constexpr int width{512};
+constexpr int height{380};
+constexpr char *name{"Game"};
+
 int main() {
-    const int windowWidth{512};
-    const int windowHeight{380};
-    InitWindow(windowWidth, windowHeight, "Dapper Dasher!");
+    SetConfigFlags(FLAG_VSYNC_HINT);
+    InitWindow(width, height, name);
     Game game;
-    SetTargetFPS(60);
     while (!WindowShouldClose()) {
         const float dT{GetFrameTime()};
         game.update(dT);
