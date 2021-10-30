@@ -14,8 +14,7 @@ int main() {
     InitWindow(width, height, name);
     Game game;
     while (!WindowShouldClose()) {
-        const float dT{GetFrameTime()};
-        game.update(dT);
+        game.update(GetFrameTime());
         BeginDrawing();
         ClearBackground(WHITE);
         game.draw();
