@@ -39,7 +39,7 @@ int main() {
 
     // int velocity{0};
 
-    Game game{512, 380};
+    Game game;
 
     SetTargetFPS(60);
     while (!WindowShouldClose()) {
