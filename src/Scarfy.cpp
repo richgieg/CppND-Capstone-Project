@@ -1,8 +1,10 @@
 #include "Scarfy.h"
 
+constexpr int spritesheetWidth = 6;
+
 Scarfy::Scarfy():
     texture{LoadTexture("textures/scarfy.png")},
-    source{0, 0, static_cast<float>(texture.width / 6), static_cast<float>(texture.height)},
+    source{0, 0, static_cast<float>(texture.width / spritesheetWidth), static_cast<float>(texture.height)},
     position{},
     velocity{} {}
 
