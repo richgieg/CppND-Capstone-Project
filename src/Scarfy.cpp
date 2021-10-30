@@ -1,9 +1,8 @@
 #include "Scarfy.h"
 
 constexpr int spritesheetWidth = 6;
-// acceleration due to gravity (pixels/s)/s
-constexpr int gravity{1'000};
-constexpr int jumpVel{-600};
+constexpr int gravityAcceleration{1'000}; // pixels per second per second
+constexpr int jumpVelocity{-600};
 constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 
 Scarfy::Scarfy():
@@ -11,7 +10,6 @@ Scarfy::Scarfy():
     source{0, 0, static_cast<float>(texture.width / spritesheetWidth), static_cast<float>(texture.height)},
     position{},
     velocity{},
-    acceleration{},
     frame{},
     isInAir{},
     runningTime{} {}
@@ -38,12 +36,12 @@ void Scarfy::update(float deltaSeconds) {
         isInAir = false;
     } else {
         // rectangle is in the air
-        velocity.y += gravity * deltaSeconds;
+        velocity.y += gravityAcceleration * deltaSeconds;
         isInAir = true;
     }
     // jump check
     if (IsKeyPressed(KEY_SPACE) && !isInAir) {
-        velocity.y += jumpVel;
+        velocity.y += jumpVelocity;
     }
     if (!isInAir) {
         // update running time
