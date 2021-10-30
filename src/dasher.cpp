@@ -25,6 +25,7 @@ int main() {
     // Rectangle scarfyRec{0, 0, static_cast<float>(scarfy.width / 6), static_cast<float>(scarfy.height)};
     // Vector2 scarfyPos{windowWidth / 2 - scarfyRec.width / 2, windowHeight - scarfyRec.height};
     Scarfy scarfy;
+    scarfy.setPosition(windowWidth / 2 - scarfy.getWidth() / 2, windowHeight - scarfy.getHeight());
 
     // // animation frame
     // int frame{};

@@ -4,11 +4,14 @@ class Scarfy {
 public:
     Scarfy();
     ~Scarfy();
+    float getWidth();
+    float getHeight();
+    void setPosition(float x, float y);
     void update(float deltaSeconds);
     void draw();
 private:
     Texture2D texture;
-    Rectangle rectangle;
+    Rectangle source;
     Vector2 position;
     Vector2 velocity;
 };

@@ -2,16 +2,29 @@
 
 Scarfy::Scarfy():
     texture{LoadTexture("textures/scarfy.png")},
-    rectangle{0, 0, static_cast<float>(texture.width / 6), static_cast<float>(texture.height)},
+    source{0, 0, static_cast<float>(texture.width / 6), static_cast<float>(texture.height)},
     position{},
     velocity{} {}
+
+float Scarfy::getWidth() {
+    return source.width;
+}
+
+float Scarfy::getHeight() {
+    return source.height;
+}
+
+void Scarfy::setPosition(float x, float y) {
+    position.x = x;
+    position.y = y;
+}
 
 void Scarfy::update(float deltaSeconds) {
 
 }
 
 void Scarfy::draw() {
-    DrawTextureRec(texture, rectangle, position, WHITE);
+    DrawTextureRec(texture, source, position, WHITE);
 }
 
 Scarfy::~Scarfy() {
