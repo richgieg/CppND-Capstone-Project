@@ -21,6 +21,9 @@ int main() {
     scarfyPos.x = windowWidth / 2 - scarfyRec.width / 2;
     scarfyPos.y = windowHeight - scarfyRec.height;
 
+    // animation frame
+    int frame{};
+
     // is rectangle in air
     bool isInAir{};
     // jump velocity (pixels/s)
@@ -54,6 +57,13 @@ int main() {
 
         // update position
         scarfyPos.y += velocity * dT;
+
+        // update animation frame
+        scarfyRec.x = frame * scarfyRec.width;
+        frame++;
+        if (frame > 5) {
+            frame = 0;
+        }
 
         DrawTextureRec(scarfy, scarfyRec, scarfyPos, WHITE);
 
