@@ -1,11 +1,12 @@
 #ifndef _ENTITY
 #define _ENTITY
 
+#include <string>
 #include "raylib.h"
 
 class Entity {
 public:
-    Entity();
+    Entity(std::string spritesheetFile, int spritesheetRows, int spritesheetColumns, int spritesheetFrames);
     ~Entity();
     float getWidth();
     float getHeight();
@@ -17,7 +18,7 @@ private:
     Rectangle source;
     Vector2 position;
     Vector2 velocity;
-    int frame;
+    int currentFrame;
     bool isInAir;
     float runningTime;
 };

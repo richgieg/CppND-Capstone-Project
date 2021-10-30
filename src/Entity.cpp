@@ -1,16 +1,15 @@
 #include "Entity.h"
 
-constexpr int spritesheetWidth = 6;
 constexpr int gravityAcceleration{1'000}; // pixels per second per second
-constexpr int jumpVelocity{-600};
+constexpr int jumpVelocity{-600}; // pixels per second
 constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 
-Entity::Entity():
-    texture{LoadTexture("textures/scarfy.png")},
-    source{0, 0, static_cast<float>(texture.width / spritesheetWidth), static_cast<float>(texture.height)},
+Entity::Entity(std::string spritesheetFile, int spritesheetRows, int spritesheetColumns, int spritesheetFrames):
+    texture{LoadTexture(spritesheetFile.c_str())},
+    source{0, 0, static_cast<float>(texture.width / spritesheetColumns), static_cast<float>(texture.height / spritesheetRows)},
     position{},
     velocity{},
-    frame{},
+    currentFrame{},
     isInAir{},
     runningTime{} {}
 
@@ -28,31 +27,25 @@ void Entity::setPosition(float x, float y) {
 }
 
 void Entity::update(float deltaSeconds) {
-    // update scarfy position
     position.y += velocity.y * deltaSeconds;
-    // perform ground check
     if (position.y >= GetScreenHeight() - source.height) {
         velocity.y = 0;
         isInAir = false;
     } else {
-        // rectangle is in the air
         velocity.y += gravityAcceleration * deltaSeconds;
         isInAir = true;
     }
-    // jump check
     if (IsKeyPressed(KEY_SPACE) && !isInAir) {
         velocity.y += jumpVelocity;
     }
     if (!isInAir) {
-        // update running time
         runningTime += deltaSeconds;
         if (runningTime >= updateTime) {
             runningTime = 0;
-            // update animation frame
-            source.x = frame * source.width;
-            frame++;
-            if (frame > 5) {
-                frame = 0;
+            source.x = currentFrame * source.width;
+            currentFrame++;
+            if (currentFrame > 5) {
+                currentFrame = 0;
             }
         }
     }
