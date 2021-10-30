@@ -35,6 +35,7 @@ void Entity::update(float deltaSeconds) {
     position.x += velocity.x * deltaSeconds;
     position.y += velocity.y * deltaSeconds;
     if (position.y >= GetScreenHeight() - source.height) {
+        position.y = GetScreenHeight() - source.height;
         velocity.y = 0;
         isInAir = false;
     } else {
