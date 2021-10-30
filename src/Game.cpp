@@ -1,14 +1,14 @@
 #include "raylib.h"
 #include "Game.h"
 
-Game::Game(): entity{"textures/scarfy.png", 1, 6, 6} {
-    entity.setPosition(GetScreenWidth() / 2 - entity.getWidth() / 2, GetScreenHeight() - entity.getHeight());
+Game::Game(): scarfy{} {
+    scarfy.setPosition(GetScreenWidth() / 2 - scarfy.getWidth() / 2, GetScreenHeight() - scarfy.getHeight());
 }
 
 void Game::update(float deltaSeconds) {
-    entity.update(deltaSeconds);
+    scarfy.update(deltaSeconds);
 }
 
 void Game::draw() {
-    entity.draw();
+    scarfy.draw();
 }
