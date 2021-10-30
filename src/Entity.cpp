@@ -14,6 +14,10 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     isInAir{},
     runningTime{} {}
 
+Entity::~Entity() {
+    UnloadTexture(texture);
+}
+
 float Entity::getWidth() {
     return source.width;
 }
@@ -54,8 +58,4 @@ void Entity::update(float deltaSeconds) {
 
 void Entity::draw() {
     DrawTextureRec(texture, source, position, WHITE);
-}
-
-Entity::~Entity() {
-    UnloadTexture(texture);
 }
