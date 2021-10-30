@@ -1,14 +1,12 @@
+#include "raylib.h"
 #include "Game.h"
 
-Game::Game(int windowWidth, int windowHeight):
-    windowWidth{windowWidth},
-    windowHeight{windowHeight}
-{
-    scarfy.setPosition(windowWidth / 2 - scarfy.getWidth() / 2, windowHeight - scarfy.getHeight());
+Game::Game() {
+    scarfy.setPosition(GetScreenWidth() / 2 - scarfy.getWidth() / 2, GetScreenHeight() - scarfy.getHeight());
 }
 
 void Game::update(float deltaSeconds) {
-
+    scarfy.update(deltaSeconds);
 }
 
 void Game::draw() {

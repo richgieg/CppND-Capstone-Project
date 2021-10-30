@@ -1,3 +1,6 @@
+#ifndef _SCARFY
+#define _SCARFY
+
 #include "raylib.h"
 
 class Scarfy {
@@ -15,3 +18,5 @@ private:
     Vector2 position;
     Vector2 velocity;
 };
+
+#endif

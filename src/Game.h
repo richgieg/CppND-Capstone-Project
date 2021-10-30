@@ -1,12 +1,15 @@
+#ifndef _GAME
+#define _GAME
+
 #include "Scarfy.h"
 
 class Game {
 public:
-    Game(int windowWidth, int windowHeight);
+    Game();
     void update(float deltaSeconds);
     void draw();
 private:
-    int windowWidth;
-    int windowHeight;
     Scarfy scarfy;
 };
+
+#endif

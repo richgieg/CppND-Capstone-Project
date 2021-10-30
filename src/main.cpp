@@ -1,5 +1,6 @@
 // https://www.raylib.com/cheatsheet/cheatsheet.html
 
+#include <iostream>
 #include "raylib.h"
 #include "Game.h"
 
