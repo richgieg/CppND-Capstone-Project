@@ -32,6 +32,7 @@ void Entity::setPosition(float x, float y) {
 }
 
 void Entity::update(float deltaSeconds) {
+    position.x += velocity.x * deltaSeconds;
     position.y += velocity.y * deltaSeconds;
     if (position.y >= GetScreenHeight() - source.height) {
         velocity.y = 0;
