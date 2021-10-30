@@ -1,12 +1,13 @@
 // https://www.raylib.com/cheatsheet/cheatsheet.html
 
 #include <iostream>
+#include <string>
 #include "raylib.h"
 #include "Game.h"
 
 constexpr int width{512};
 constexpr int height{380};
-constexpr char *name{"Game"};
+constexpr char name[] = "Game";
 
 int main() {
     SetConfigFlags(FLAG_VSYNC_HINT);
