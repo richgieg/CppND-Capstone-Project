@@ -1,7 +1,7 @@
 // https://www.raylib.com/cheatsheet/cheatsheet.html
 
 #include "raylib.h"
-#include "Scarfy.h"
+#include "Game.h"
 
 int main() {
     const int windowWidth{512};
@@ -24,8 +24,6 @@ int main() {
     // Texture2D scarfy = LoadTexture("textures/scarfy.png");
     // Rectangle scarfyRec{0, 0, static_cast<float>(scarfy.width / 6), static_cast<float>(scarfy.height)};
     // Vector2 scarfyPos{windowWidth / 2 - scarfyRec.width / 2, windowHeight - scarfyRec.height};
-    Scarfy scarfy;
-    scarfy.setPosition(windowWidth / 2 - scarfy.getWidth() / 2, windowHeight - scarfy.getHeight());
 
     // // animation frame
     // int frame{};
@@ -40,15 +38,16 @@ int main() {
 
     // int velocity{0};
 
+    Game game{512, 380};
+
     SetTargetFPS(60);
     while (!WindowShouldClose()) {
         // delta time
         const float dT{GetFrameTime()};
+        game.update(dT);
 
         BeginDrawing();
         ClearBackground(WHITE);
-
-        scarfy.update(dT);
 
         // // perform ground check
         // if (scarfyPos.y >= windowHeight - scarfyRec.height) {
@@ -89,8 +88,7 @@ int main() {
         // draw nebula
         DrawTextureRec(nebula, nebRec, nebPos, WHITE);
 
-        // // draw scarfy
-        scarfy.draw();
+        game.draw();
 
         EndDrawing();
     }
