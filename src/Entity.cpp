@@ -42,10 +42,10 @@ void Entity::update(float deltaSeconds) {
     if (!isInAir) {
         runningTime += deltaSeconds;
         if (runningTime >= updateTime) {
-            runningTime = 0;
+            runningTime = runningTime - updateTime;
             source.x = currentFrame * source.width;
             currentFrame++;
-            if (currentFrame > 5) {
+            if (currentFrame >= framesInSpritesheet) {
                 currentFrame = 0;
             }
         }
