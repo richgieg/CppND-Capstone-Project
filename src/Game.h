@@ -1,7 +1,7 @@
 #ifndef _GAME
 #define _GAME
 
-#include "Scarfy.h"
+#include "Entity.h"
 
 class Game {
 public:
@@ -9,7 +9,7 @@ public:
     void update(float deltaSeconds);
     void draw();
 private:
-    Scarfy scarfy;
+    Entity entity;
 };
 
 #endif

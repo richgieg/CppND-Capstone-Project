@@ -2,13 +2,13 @@
 #include "Game.h"
 
 Game::Game() {
-    scarfy.setPosition(GetScreenWidth() / 2 - scarfy.getWidth() / 2, GetScreenHeight() - scarfy.getHeight());
+    entity.setPosition(GetScreenWidth() / 2 - entity.getWidth() / 2, GetScreenHeight() - entity.getHeight());
 }
 
 void Game::update(float deltaSeconds) {
-    scarfy.update(deltaSeconds);
+    entity.update(deltaSeconds);
 }
 
 void Game::draw() {
-    scarfy.draw();
+    entity.draw();
 }
