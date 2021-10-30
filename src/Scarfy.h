@@ -4,6 +4,8 @@ class Scarfy {
 public:
     Scarfy();
     ~Scarfy();
+    void update(float deltaSeconds);
+    void draw();
 private:
     Texture2D texture;
     Rectangle rectangle;
