@@ -13,7 +13,7 @@ int main() {
 
     // nebula variables
     Texture2D nebula = LoadTexture("textures/12_nebula_spritesheet.png");
-    Rectangle nebRec{0, 0, nebula.width / 8, nebula.height / 8};
+    Rectangle nebRec{0, 0, static_cast<float>(nebula.width) / 8, static_cast<float>(nebula.height) / 8};
     Vector2 nebPos{windowWidth, windowHeight - nebRec.height};
 
     // nebula X velocity (pixels/s)
@@ -21,7 +21,7 @@ int main() {
 
     // scarfy variables
     Texture2D scarfy = LoadTexture("textures/scarfy.png");
-    Rectangle scarfyRec{0.0, 0.0, scarfy.width / 6, scarfy.height};
+    Rectangle scarfyRec{0, 0, static_cast<float>(scarfy.width) / 6, static_cast<float>(scarfy.height)};
     Vector2 scarfyPos{windowWidth / 2 - scarfyRec.width / 2, windowHeight - scarfyRec.height};
 
     // animation frame
