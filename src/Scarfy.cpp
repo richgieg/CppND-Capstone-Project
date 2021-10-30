@@ -4,6 +4,7 @@ constexpr int spritesheetWidth = 6;
 // acceleration due to gravity (pixels/s)/s
 constexpr int gravity{1'000};
 constexpr int jumpVel{-600};
+constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 
 Scarfy::Scarfy():
     texture{LoadTexture("textures/scarfy.png")},
@@ -12,7 +13,8 @@ Scarfy::Scarfy():
     velocity{},
     acceleration{},
     frame{},
-    isInAir{} {}
+    isInAir{},
+    runningTime{} {}
 
 float Scarfy::getWidth() {
     return source.width;
@@ -28,6 +30,8 @@ void Scarfy::setPosition(float x, float y) {
 }
 
 void Scarfy::update(float deltaSeconds) {
+    // update scarfy position
+    position.y += velocity.y * deltaSeconds;
     // perform ground check
     if (position.y >= GetScreenHeight() - source.height) {
         velocity.y = 0;
@@ -41,8 +45,19 @@ void Scarfy::update(float deltaSeconds) {
     if (IsKeyPressed(KEY_SPACE) && !isInAir) {
         velocity.y += jumpVel;
     }
-    // update scarfy position
-    position.y += velocity.y * deltaSeconds;
+    if (!isInAir) {
+        // update running time
+        runningTime += deltaSeconds;
+        if (runningTime >= updateTime) {
+            runningTime = 0;
+            // update animation frame
+            source.x = frame * source.width;
+            frame++;
+            if (frame > 5) {
+                frame = 0;
+            }
+        }
+    }
 }
 
 void Scarfy::draw() {

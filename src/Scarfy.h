@@ -20,6 +20,7 @@ private:
     Vector2 acceleration;
     int frame;
     bool isInAir;
+    float runningTime;
 };
 
 #endif
