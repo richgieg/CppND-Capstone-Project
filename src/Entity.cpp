@@ -4,11 +4,12 @@ constexpr int gravityAcceleration{1'000}; // pixels per second per second
 constexpr int jumpVelocity{-600}; // pixels per second
 constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 
-Entity::Entity(std::string spritesheetFile, int spritesheetRows, int spritesheetColumns, int spritesheetFrames):
+Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet):
     texture{LoadTexture(spritesheetFile.c_str())},
-    source{0, 0, static_cast<float>(texture.width / spritesheetColumns), static_cast<float>(texture.height / spritesheetRows)},
+    source{0, 0, static_cast<float>(texture.width / columnsInSpritesheet), static_cast<float>(texture.height / rowsInSpritesheet)},
     position{},
     velocity{},
+    framesInSpritesheet{framesInSpritesheet},
     currentFrame{},
     isInAir{},
     runningTime{} {}

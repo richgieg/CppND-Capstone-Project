@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "Game.h"
 
-Game::Game() {
+Game::Game(): entity{"asdf", 1, 6, 6} {
     entity.setPosition(GetScreenWidth() / 2 - entity.getWidth() / 2, GetScreenHeight() - entity.getHeight());
 }
 

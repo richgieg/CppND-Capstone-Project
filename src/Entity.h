@@ -6,7 +6,7 @@
 
 class Entity {
 public:
-    Entity(std::string spritesheetFile, int spritesheetRows, int spritesheetColumns, int spritesheetFrames);
+    Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet);
     ~Entity();
     float getWidth();
     float getHeight();
@@ -18,6 +18,7 @@ private:
     Rectangle source;
     Vector2 position;
     Vector2 velocity;
+    int framesInSpritesheet;
     int currentFrame;
     bool isInAir;
     float runningTime;
