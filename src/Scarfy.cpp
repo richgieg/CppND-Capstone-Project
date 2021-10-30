@@ -6,7 +6,8 @@ Scarfy::Scarfy():
     texture{LoadTexture("textures/scarfy.png")},
     source{0, 0, static_cast<float>(texture.width / spritesheetWidth), static_cast<float>(texture.height)},
     position{},
-    velocity{} {}
+    velocity{},
+    acceleration{} {}
 
 float Scarfy::getWidth() {
     return source.width;

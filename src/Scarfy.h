@@ -17,6 +17,7 @@ private:
     Rectangle source;
     Vector2 position;
     Vector2 velocity;
+    Vector2 acceleration;
 };
 
 #endif
