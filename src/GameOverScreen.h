@@ -8,7 +8,7 @@
 
 class GameOverScreen {
 public:
-    void draw();
+    void draw() const;
 };
 
 #endif

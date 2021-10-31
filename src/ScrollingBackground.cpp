@@ -27,13 +27,13 @@ void ScrollingBackground::updateLayerX(float deltaSeconds, float& x, const float
     }
 }
 
-void ScrollingBackground::draw() {
+void ScrollingBackground::draw() const {
     drawLayer(farBuildingsX, farBuildings->texture);
     drawLayer(backBuildingsX, backBuildings->texture);
     drawLayer(foregroundX, foreground->texture);
 }
 
-void ScrollingBackground::drawLayer(const float& x, const Texture2D& texture) {
+void ScrollingBackground::drawLayer(const float& x, const Texture2D& texture) const {
     Vector2 position{x, 0.0};
     DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
     position.x += texture.width * textureScale;

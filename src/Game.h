@@ -17,7 +17,7 @@ class Game {
 public:
     Game();
     void update(float deltaSeconds);
-    void draw();
+    void draw() const;
 private:
     bool checkForCollision();
     ScrollingBackground scrollingBackground;

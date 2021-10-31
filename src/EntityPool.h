@@ -40,7 +40,7 @@ public:
         }
     }
 
-    void draw() {
+    void draw() const {
         for (auto& entity : entities) {
             entity.draw();
         }

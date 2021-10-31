@@ -6,7 +6,7 @@ constexpr int fontSize{36};
 constexpr Color textColor{RED};
 constexpr Color overlayColor{(Color){0, 0, 0, 200}}; // transparent black
 
-void GameOverScreen::draw() {
+void GameOverScreen::draw() const {
     DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), overlayColor);
     int textWidth = MeasureText(message, fontSize);
     int textX = GetScreenWidth() / 2 - textWidth / 2;

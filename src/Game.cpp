@@ -30,7 +30,7 @@ bool Game::checkForCollision() {
     return false;
 }
 
-void Game::draw() {
+void Game::draw() const {
     scrollingBackground.draw();
     player.draw();
     enemies.draw();

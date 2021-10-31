@@ -13,10 +13,10 @@ class ScrollingBackground {
 public:
     ScrollingBackground();
     void update(float deltaSeconds);
-    void draw();
+    void draw() const;
 private:
     void updateLayerX(float deltaSeconds, float& x, const float& scrollSpeed, const Texture2D& texture);
-    void drawLayer(const float& x, const Texture2D& texture);
+    void drawLayer(const float& x, const Texture2D& texture) const;
     std::shared_ptr<Texture2DHandle> farBuildings;
     std::shared_ptr<Texture2DHandle> backBuildings;
     std::shared_ptr<Texture2DHandle> foreground;
