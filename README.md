@@ -131,6 +131,8 @@ See:
 ## Object Oriented Programming
 
 ### The project uses Object Oriented Programming techniques.
+See [Class Structure](#class-structure) and corresponding header and code files for more info.
+
 ### Classes use appropriate access specifiers for class members.
 ### Class constructors utilize member initialization lists.
 ### Classes abstract implementation details from their interfaces.
