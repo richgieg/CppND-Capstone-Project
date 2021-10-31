@@ -16,5 +16,4 @@ int main() {
         game.draw();
         EndDrawing();
     }
-    CloseWindow();
 }

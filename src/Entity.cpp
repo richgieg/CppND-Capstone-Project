@@ -6,7 +6,7 @@ constexpr int defaultJumpVelocity{-600}; // pixels per second
 constexpr float frameUpdateSeconds{1.0 / 12.0}; // 12 frames per second
 
 Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet):
-    texturePtr{TextureManager::getInstance().getTexture(spritesheetFile)},
+    texturePtr{textureManager.getTexture(spritesheetFile)},
     source{
         0,
         0,
