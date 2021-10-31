@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Player.h"
 
 constexpr float velocityX = 500.0; // pixels per second
