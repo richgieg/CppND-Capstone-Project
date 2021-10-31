@@ -145,7 +145,7 @@ See: `Entity.cpp` line 8
 
 ### Classes abstract implementation details from their interfaces.
 See: `Entity.h` for examples of appropriately named (self-documenting) methods,
-including getters and setters, of which some are marked const in order to strongly
+including getters and setters, of which some are marked `const` in order to strongly
 communicate that the do not modify state of the object.
 
 ### Classes encapsulate behavior.
