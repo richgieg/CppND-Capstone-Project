@@ -15,6 +15,7 @@ class Entity {
 public:
     Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet);
     void setX(float pixels);
+    void setVelocityX(float pixelsPerSecond);
     void setJumpVelocity(float pixelsPerSecond);
     void jump();
     virtual void update(float deltaSeconds);
