@@ -1,7 +1,7 @@
 #include "Entity.h"
 
 constexpr int gravityAcceleration{1'000}; // pixels per second per second
-constexpr int jumpVelocity{-600}; // pixels per second
+constexpr int defaultJumpVelocity{-600}; // pixels per second
 constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 
 Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet):
@@ -9,6 +9,7 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     source{0, 0, static_cast<float>(texture.width / columnsInSpritesheet), static_cast<float>(texture.height / rowsInSpritesheet)},
     position{0, GetScreenHeight() - source.height},
     velocity{},
+    jumpVelocity{defaultJumpVelocity},
     framesInSpritesheet{framesInSpritesheet},
     currentFrame{},
     isInAir{},
@@ -18,8 +19,12 @@ Entity::~Entity() {
     UnloadTexture(texture);
 }
 
-void Entity::setX(float value) {
-    position.x = value;
+void Entity::setX(float pixels) {
+    position.x = pixels;
+}
+
+void Entity::setJumpVelocity(float pixelsPerSecond) {
+    jumpVelocity = pixelsPerSecond;
 }
 
 void Entity::update(float deltaSeconds) {

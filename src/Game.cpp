@@ -3,6 +3,7 @@
 
 Game::Game() {
     nebula.setX(200);
+    nebula.setJumpVelocity(-1200);
 }
 
 void Game::update(float deltaSeconds) {
