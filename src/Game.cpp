@@ -1,4 +1,3 @@
-#include <algorithm>
 #include "raylib.h"
 #include "Game.h"
 #include "TextureManager.h"
