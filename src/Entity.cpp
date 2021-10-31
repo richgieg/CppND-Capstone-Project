@@ -7,7 +7,7 @@ constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet):
     texture{LoadTexture(spritesheetFile.c_str())},
     source{0, 0, static_cast<float>(texture.width / columnsInSpritesheet), static_cast<float>(texture.height / rowsInSpritesheet)},
-    position{},
+    position{0, GetScreenHeight() - source.height},
     velocity{},
     framesInSpritesheet{framesInSpritesheet},
     currentFrame{},
@@ -24,11 +24,6 @@ float Entity::getWidth() {
 
 float Entity::getHeight() {
     return source.height;
-}
-
-void Entity::setPosition(float x, float y) {
-    position.x = x;
-    position.y = y;
 }
 
 void Entity::update(float deltaSeconds) {

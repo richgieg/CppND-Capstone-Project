@@ -10,7 +10,6 @@ public:
     ~Entity();
     float getWidth();
     float getHeight();
-    void setPosition(float x, float y);
     void update(float deltaSeconds);
     void draw();
 private:
