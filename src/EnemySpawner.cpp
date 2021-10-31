@@ -19,9 +19,7 @@ void EnemySpawner::update(float deltaSeconds) {
         secondsSinceLastSpawn = 0;
         int enemiesPerSpawn = (totalSpawns / spawnsPerLevel) + 1;
         for (int i = 0; i < enemiesPerSpawn; i++) {
-            auto enemyIterator = std::find_if(enemies->begin(), enemies->end(), [](Enemy& enemy) {
-                return !enemy.getActive();
-            });
+            auto enemyIterator = enemies->getFirstInactive();
             if (enemyIterator != enemies->end()) {
                 auto x = GetScreenWidth() + (i * enemyIterator->getWidth());
                 enemyIterator->setX(x);
