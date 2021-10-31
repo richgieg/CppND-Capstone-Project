@@ -116,6 +116,10 @@ This project addresses the rubric items below.
 ## Loops, Functions, I/O
 
 ### The project demonstrates an understanding of C++ functions and control structures.
+See:
+- `Game.cpp` lines 13, 25
+- `EntityPool.h` lines 32, 38
+
 ### The project reads data from a file and process the data, or the program writes data to a file.
 ### The project accepts user input and processes the input.
 
