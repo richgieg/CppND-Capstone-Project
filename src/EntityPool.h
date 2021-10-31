@@ -2,7 +2,7 @@
 //
 // Manages a pool of entities.
 //
-// NOTE: Method definitions are in this header because this class is a template.
+// NOTE: Method definitions are in this header because this is a template class.
 //
 
 #ifndef _ENTITY_POOL
