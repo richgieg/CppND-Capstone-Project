@@ -148,8 +148,12 @@ See: `Entity.h` for examples of appropriately named (self-documenting) methods,
 including getters and setters, of which some are marked `const` in order to strongly
 communicate (and ensure) that they do not modify state of the object.
 
-### Classes encapsulate behavior.
 ### Classes follow an appropriate inheritance hierarchy.
+A good example of this is how the `Enemy` and `Player` classes inherit from `Entity`, since
+`Entity` implements the necessary functionality for manipulating a sprite-based game object.
+
+See: `Entity.h`, `Player.h`, and `Enemy.h`
+
 ### Derived class functions override virtual base class functions.
 ### Templates generalize functions in the project.
 
