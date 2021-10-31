@@ -57,7 +57,9 @@ void Entity::jump() {
 }
 
 bool Entity::collidesWith(Entity& other) {
-    return false;
+    auto thisRec = Rectangle{position.x, position.y, source.width, source.height};
+    auto otherRec = Rectangle{other.position.x, other.position.y, other.source.width, other.source.height};
+    return CheckCollisionRecs(thisRec, otherRec);
 }
 
 void Entity::update(float deltaSeconds) {
