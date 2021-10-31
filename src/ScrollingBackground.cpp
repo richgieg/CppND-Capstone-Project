@@ -29,23 +29,17 @@ void ScrollingBackground::update(float deltaMs) {
     }
 }
 
+void drawLayer(const float& x, const Texture2D& texture) {
+    Vector2 position{x, 0.0};
+    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
+    position.x += texture.width * textureScale;
+    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
+    position.x += texture.width * textureScale;
+    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
+}
+
 void ScrollingBackground::draw() {
-    Vector2 farBuildingsPosition{farBuildingsX, 0.0};
-    DrawTextureEx(farBuildings->texture, farBuildingsPosition, 0.0, textureScale, WHITE);
-    farBuildingsPosition.x += farBuildings->texture.width * textureScale;
-    DrawTextureEx(farBuildings->texture, farBuildingsPosition, 0.0, textureScale, WHITE);
-    farBuildingsPosition.x += farBuildings->texture.width * textureScale;
-    DrawTextureEx(farBuildings->texture, farBuildingsPosition, 0.0, textureScale, WHITE);
-    Vector2 backBuildingsPosition{backBuildingsX, 0.0};
-    DrawTextureEx(backBuildings->texture, backBuildingsPosition, 0.0, textureScale, WHITE);
-    backBuildingsPosition.x += backBuildings->texture.width * textureScale;
-    DrawTextureEx(backBuildings->texture, backBuildingsPosition, 0.0, textureScale, WHITE);
-    backBuildingsPosition.x += backBuildings->texture.width * textureScale;
-    DrawTextureEx(backBuildings->texture, backBuildingsPosition, 0.0, textureScale, WHITE);
-    Vector2 foregroundPosition{foregroundX, 0.0};
-    DrawTextureEx(foreground->texture, foregroundPosition, 0.0, textureScale, WHITE);
-    foregroundPosition.x += foreground->texture.width * textureScale;
-    DrawTextureEx(foreground->texture, foregroundPosition, 0.0, textureScale, WHITE);
-    foregroundPosition.x += foreground->texture.width * textureScale;
-    DrawTextureEx(foreground->texture, foregroundPosition, 0.0, textureScale, WHITE);
+    drawLayer(farBuildingsX, farBuildings->texture);
+    drawLayer(backBuildingsX, backBuildings->texture);
+    drawLayer(foregroundX, foreground->texture);
 }
