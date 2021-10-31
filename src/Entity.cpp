@@ -22,6 +22,10 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     isInAir{},
     runningTime{} {}
 
+float Entity::getWidth() {
+    return source.width;
+}
+
 void Entity::setX(float pixels) {
     position.x = pixels;
 }
