@@ -12,8 +12,10 @@ public:
 private:
     std::shared_ptr<Texture2DHandle> farBuildings;
     std::shared_ptr<Texture2DHandle> backBuildings;
+    std::shared_ptr<Texture2DHandle> foreground;
     float farBuildingsX;
     float backBuildingsX;
+    float foregroundX;
 };
 
 #endif
