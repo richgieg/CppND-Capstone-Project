@@ -1,7 +1,7 @@
 #include "ScrollingBackground.h"
 #include "TextureManager.h"
 
-constexpr int farBuildingsScrollSpeed = -100; // pixels per second
+constexpr int farBuildingsScrollSpeed = -25; // pixels per second
 constexpr float farBuildingsScale = 2.0;
 
 ScrollingBackground::ScrollingBackground():
