@@ -95,7 +95,7 @@ as long as the window is open
 - `Game` creates a `ScrollingBackground` instance, an `EntityPool` instance containing `Enemy` instances,
 an `EnemySpawner` instance, a `Player` instance, and a `GameOverScreen` instance
 - `EntityPool` is a class template which can be used to conveniently create and manage `Entity` (and subclass
-of `Entity`) instances. Calls `update` and `draw` on all entities in the pool. Also provides a
+of `Entity`) instances. It calls `update` and `draw` on all entities in the pool. Also provides a
 `getFirstInactive` method which returns the first inactive entity in the pool (useful for `EnemySpawner`, etc.)
 - `EnemySpawner` is responsible for spawning enemies over time
 - `Player` and `Enemy` inherit from `Entity`, since `Entity` implements the common behavior of
