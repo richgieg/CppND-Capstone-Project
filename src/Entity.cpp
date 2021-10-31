@@ -56,6 +56,10 @@ void Entity::jump() {
     }
 }
 
+bool Entity::collidesWith(Entity& other) {
+    return false;
+}
+
 void Entity::update(float deltaSeconds) {
     if (active) {
         position.x += velocity.x * deltaSeconds;

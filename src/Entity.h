@@ -22,6 +22,7 @@ public:
     bool getActive();
     void setActive(bool value);
     void jump();
+    bool collidesWith(Entity& other);
     virtual void update(float deltaSeconds);
     void draw();
 private:
