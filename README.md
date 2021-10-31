@@ -1,6 +1,6 @@
 # Intro
 
-This game is called Hipster Hop. It's my capstone project for Udacity's C++ Nanodegree course.
+This is my game Hipster Hop that I created as my capstone project in Udacity's C++ Nanodegree course.
 
 # Contents
 - [Prerequisites](#prerequisites)
