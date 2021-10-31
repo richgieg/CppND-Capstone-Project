@@ -3,7 +3,7 @@
 
 constexpr int windowWidth{1024};
 constexpr int windowHeight{380};
-constexpr char windowName[]{"Game"};
+constexpr char windowName[]{"Hipster Hop"};
 
 int main() {
     SetConfigFlags(FLAG_VSYNC_HINT);
