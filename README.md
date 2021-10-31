@@ -160,6 +160,9 @@ See: `Entity.h`, `Player.h`, and `Enemy.h`
 See: `Player.h` line 14, `Player.cpp` line 8, `Entity.h` line 27, and `Entity.cpp` line 65
 
 ### Templates generalize functions in the project.
+`EntityPool` is a generic class with generic methods.
+
+See `EntityPool.h` line 14
 
 ## Memory Management
 ### The project makes use of references in function declarations.
