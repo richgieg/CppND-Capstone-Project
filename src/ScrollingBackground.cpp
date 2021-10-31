@@ -14,19 +14,17 @@ ScrollingBackground::ScrollingBackground():
     backBuildingsX{},
     foregroundX{} {}
 
-void ScrollingBackground::update(float deltaMs) {
-    farBuildingsX += farBuildingsScrollSpeed * deltaMs;
-    if (farBuildingsX <= -farBuildings->texture.width * textureScale) {
-        farBuildingsX = 0;
+void updateLayerX(float deltaSeconds, float& x, const float& scrollSpeed, const Texture2D& texture) {
+    x += scrollSpeed * deltaSeconds;
+    if (x <= -texture.width * textureScale) {
+        x = 0;
     }
-    backBuildingsX += backBuildingsScrollSpeed * deltaMs;
-    if (backBuildingsX <= -backBuildings->texture.width * textureScale) {
-        backBuildingsX = 0;
-    }
-    foregroundX += foregroundScrollSpeed * deltaMs;
-    if (foregroundX <= -foreground->texture.width * textureScale) {
-        foregroundX = 0;
-    }
+}
+
+void ScrollingBackground::update(float deltaSeconds) {
+    updateLayerX(deltaSeconds, farBuildingsX, farBuildingsScrollSpeed, farBuildings->texture);
+    updateLayerX(deltaSeconds, backBuildingsX, backBuildingsScrollSpeed, backBuildings->texture);
+    updateLayerX(deltaSeconds, foregroundX, foregroundScrollSpeed, foreground->texture);
 }
 
 void drawLayer(const float& x, const Texture2D& texture) {
