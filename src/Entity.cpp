@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Entity.h"
 
 constexpr int gravityAcceleration{1'000}; // pixels per second per second
@@ -64,6 +65,7 @@ Entity& Entity::operator=(Entity&& other) {
 }
 
 Entity::~Entity() {
+    std::cout << "Entity destructor\n";
     UnloadTexture(texture);
 }
 
