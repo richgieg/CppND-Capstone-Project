@@ -2,6 +2,7 @@
 #define _GAME
 
 #include "Scarfy.h"
+#include "Nebula.h"
 
 class Game {
 public:
@@ -10,6 +11,7 @@ public:
     void draw();
 private:
     Scarfy scarfy;
+    Nebula nebula;
 };
 
 #endif
