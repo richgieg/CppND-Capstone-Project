@@ -1,6 +1,6 @@
 # Prerequisites
 
-## Install raylib
+## raylib
 Description from raylib website: "raylib is a simple and easy-to-use library to enjoy videogames programming."
 
 ### Windows
@@ -18,3 +18,54 @@ Description from raylib website: "raylib is a simple and easy-to-use library to 
 ### Mac
 - Follow instructions at https://github.com/raysan5/raylib/wiki/Working-on-macOS
   - Use Homebrew option
+
+# Clone Repository
+`git clone https://github.com/richgieg/CppND-Capstone-Project richgieg-CppND-Capstone-Project`
+
+# Debug Build
+
+## Windows
+```
+cd richgieg-CppND-Capstone-Project
+C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG
+```
+
+## Linux
+```
+make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp BUILD_MODE=DEBUG
+```
+
+## Mac
+```
+make PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG
+```
+
+# Release Build
+
+## Windows
+```
+cd richgieg-CppND-Capstone-Project
+C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp
+```
+
+## Linux
+```
+make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp
+```
+
+## Mac
+```
+make PROJECT_NAME=hipster-hop OBJS=src/*.cpp
+```
+
+# Run
+After building either the debug or release version, run using the steps below.
+
+## Windows
+`hipster-hop` (or `.\hipster-hop.exe` if using PowerShell)
+
+## Linux
+./hipster-hop
+
+## Mac
+./hipster-hop
