@@ -22,7 +22,7 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     runningTime{} {}
 
 Entity::Entity(Entity&& other) {
-    texturePtr = std::move(other.texturePtr);
+    texturePtr = std::move(other.texturePtr); // transfer ownership
     source = other.source;
     position = other.position;
     velocity = other.velocity;
@@ -43,7 +43,7 @@ Entity::Entity(Entity&& other) {
 
 Entity& Entity::operator=(Entity&& other) {
     if (this == &other) return *this;
-    texturePtr = std::move(other.texturePtr);
+    texturePtr = std::move(other.texturePtr); // transfer ownership
     source = other.source;
     position = other.position;
     velocity = other.velocity;

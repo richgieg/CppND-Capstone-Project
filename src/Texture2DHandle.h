@@ -7,10 +7,11 @@
 class Texture2DHandle {
 public:
     Texture2DHandle(std::string file);
-    // Texture2DHandle(const Texture2DHandle&) = delete;
-    // Texture2DHandle& operator=(const Texture2DHandle&) = delete;
-    // Texture2DHandle(Texture2DHandle&&) = delete;
-    // Texture2DHandle& operator=(Texture2DHandle&&) = delete;
+    // Cannot be copied or moved. Meant to be managed by unique_ptr.
+    Texture2DHandle(const Texture2DHandle&) = delete;
+    Texture2DHandle& operator=(const Texture2DHandle&) = delete;
+    Texture2DHandle(Texture2DHandle&&) = delete;
+    Texture2DHandle& operator=(Texture2DHandle&&) = delete;
     ~Texture2DHandle();
     const Texture2D texture;
 };
