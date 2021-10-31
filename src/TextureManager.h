@@ -20,6 +20,7 @@ private:
     std::unordered_map<std::string, std::shared_ptr<Texture2DHandle>> textureHandleMap;
 };
 
+// Global TextureManager instance.
 extern TextureManager textureManager;
 
 #endif
