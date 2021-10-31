@@ -182,7 +182,7 @@ See: `TextureManager.cpp` and `Texture2DHandle.cpp`
 
 ### The project follows the Rule of 5.
 I'm not sure if this counts for full credit on this item, but `Texture2DHandle` follows the rule
-of 5 by providing a destructor implementation, which is required to unload the texture, and then
+of 5 by providing a destructor implementation (which is required to unload the texture) and also
 deletes the copy constructor, copy assignment operator, move constructor, and move assignment operator.
 The rationale for deleting these is to prevent copying and moving Texture2DHandles and thus strongly
 encourage that they are managed by smart pointers.
