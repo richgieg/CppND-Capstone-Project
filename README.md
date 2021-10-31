@@ -121,7 +121,12 @@ See:
 - `EntityPool.h` lines 32, 38
 
 ### The project reads data from a file and process the data, or the program writes data to a file.
+See:
+- `Texture2DHandle.cpp` line 5 (loading a texture file from disk using raylib)
+
 ### The project accepts user input and processes the input.
+See:
+- `Player.cpp` line 10 (player jumps when user presses space bar)
 
 ## Object Oriented Programming
 
