@@ -94,12 +94,17 @@ at least it's fun to try!
 as long as the window is open
 - `Game` creates a `ScrollingBackground` instance, an `EntityPool` instance containing `Enemy` instances,
 an `EnemySpawner` instance, a `Player` instance, and a `GameOverScreen` instance
-- `EnemySpawner` is responsible for spawning enemies
+- `EntityPool` is a class template which can be used to conveniently create and manage `Entity` (and subclass
+of `Entity`) instances. Calls `update` and `draw` on all entities in the pool. Also provides a
+`getFirstInactive` method which returns the first inactive entity in the pool (useful for `EnemySpawner`, etc.)
+- `EnemySpawner` is responsible for spawning enemies over time
 - `Player` and `Enemy` inherit from `Entity`, since `Entity` implements the common behavior of
 manipulating a sprite on screen
+- `GameOverScreen` is responsible for showing "game over" text and dimming the background
 - `Texture2DHandle` is an RAII wrapper class for unsafe `Texture2D` structures returned by the raylib
 library (representing spritesheets and background images)
 - `TextureManager` uses an `unordered_map` to maintain a cache of `shared_ptr<Texture2DHandle>`
 indexed by file name. Its `loadAndGetTexture` method is used by `Entity` and `ScrollingBackground` to load
 their spritesheets/images. This ensures that a particular file is only loaded once and shared pointers
 are used so that the `Texture2DHandle` destructor is called automatically when necessary (and only once).
+
