@@ -14,17 +14,17 @@
 class Entity {
 public:
     Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet);
-    float getWidth();
+    float getWidth() const;
     float getX() const;
     void setX(float pixels);
     void setVelocityX(float pixelsPerSecond);
     void setJumpVelocity(float pixelsPerSecond);
-    bool getActive();
+    bool getActive() const;
     void setActive(bool value);
     void jump();
-    bool collidesWith(Entity& other);
+    bool collidesWith(const Entity& other) const;
     virtual void update(float deltaSeconds);
-    void draw();
+    void draw() const;
 private:
     std::shared_ptr<Texture2DHandle> texturePtr;
     Rectangle source;

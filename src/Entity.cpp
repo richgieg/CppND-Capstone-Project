@@ -22,7 +22,7 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     runningTime{},
     active{} {}
 
-float Entity::getWidth() {
+float Entity::getWidth() const {
     return source.width;
 }
 
@@ -42,7 +42,7 @@ void Entity::setJumpVelocity(float pixelsPerSecond) {
     jumpVelocity = pixelsPerSecond;
 }
 
-bool Entity::getActive() {
+bool Entity::getActive() const {
     return active;
 }
 
@@ -56,7 +56,7 @@ void Entity::jump() {
     }
 }
 
-bool Entity::collidesWith(Entity& other) {
+bool Entity::collidesWith(const Entity& other) const {
     auto thisRec = Rectangle{position.x, position.y, source.width, source.height};
     auto otherRec = Rectangle{other.position.x, other.position.y, other.source.width, other.source.height};
     return CheckCollisionRecs(thisRec, otherRec);
@@ -88,7 +88,7 @@ void Entity::update(float deltaSeconds) {
     }
 }
 
-void Entity::draw() {
+void Entity::draw() const {
     if (active) {
         DrawTextureRec(texturePtr->texture, source, position, WHITE);
     }
