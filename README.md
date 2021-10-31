@@ -141,7 +141,8 @@ I make heavy use of initialization lists in this project in order to ensure that
 all primitive members are initialized to their default values at the very least,
 and also to initialize members with arguments where arguments are given.
 
-See: `Entity.cpp` line 8
+See:
+- `Entity.cpp` line 8
 
 ### Classes abstract implementation details from their interfaces.
 See: `Entity.h` for examples of appropriately named (self-documenting) methods,
@@ -157,20 +158,28 @@ See: `Entity.h`, `Player.h`, and `Enemy.h`
 ### Derived class functions override virtual base class functions.
 `Player` overrides the virtual `update` method of `Entity` in order to react to user input.
 
-See: `Player.h` line 14, `Player.cpp` line 8, `Entity.h` line 27, and `Entity.cpp` line 65
+See:
+- `Player.h` line 14
+- `Player.cpp` line 8
+- `Entity.h` line 27
+- `Entity.cpp` line 65
 
 ### Templates generalize functions in the project.
 `EntityPool` is a generic class with generic methods.
 
-See: `EntityPool.h` line 14
+See:
+- `EntityPool.h` line 14
 
 ## Memory Management
 
 ### The project makes use of references in function declarations.
-See: `ScrollingBackground.h` lines 18 and 19, and `ScrollingBackground.cpp` lines 23 and 36
+See:
+- `ScrollingBackground.h` lines 18 and 19
+- `ScrollingBackground.cpp` lines 23 and 36
 
 ### The project uses destructors appropriately.
-See: `Texture2DHandle.cpp` line 8 (unloads unsafe `Texture2D` structure loaded by raylib library)
+See:
+- `Texture2DHandle.cpp` line 8 (unloads unsafe `Texture2D` structure loaded by raylib library)
 
 ### The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.
 `TextureManager` maintains an `unordered_map` of `shared_ptr<Texture2DHandle>` instances and
@@ -187,8 +196,12 @@ deletes the copy constructor, copy assignment operator, move constructor, and mo
 The rationale for deleting these is to prevent copying and moving Texture2DHandles and thus strongly
 encourage that they are managed by smart pointers.
 
-See: `Texture2DHandle.h` line 19
+See:
+- `Texture2DHandle.h` line 19
 
 ### The project uses smart pointers instead of raw pointers.
-See: `Entity.h` line 30, `ScrollingBackground.h` line 20, `TextureManager.h` lines 18 and 20,
-and `TextureManager.cpp` line 9
+See:
+- `Entity.h` line 30
+- `ScrollingBackground.h` line 20
+- `TextureManager.h` lines 18 and 20
+- `TextureManager.cpp` line 9
