@@ -12,7 +12,6 @@ public:
     void draw();
 private:
     Scarfy scarfy;
-    // Nebula nebula;
     EntityPool<Nebula> nebulas;
 };
 
