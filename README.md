@@ -1,3 +1,7 @@
+# Intro
+
+This game is called Hipster Hop. It's my capstone project for Udacity's C++ Nanodegree course.
+
 # Contents
 - [Prerequisites](#prerequisites)
 - [Debug Build](#debug-build)
