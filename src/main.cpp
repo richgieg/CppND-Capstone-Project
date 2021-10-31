@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "Game.h"
 
-constexpr int windowWidth{1536};
+constexpr int windowWidth{1024};
 constexpr int windowHeight{380};
 constexpr char windowName[]{"Game"};
 
