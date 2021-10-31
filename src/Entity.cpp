@@ -15,6 +15,54 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     isInAir{},
     runningTime{} {}
 
+Entity::Entity(Entity&& other) {
+    // copy members to "moved to" object
+    texture = other.texture;
+    source = other.source;
+    position = other.position;
+    velocity = other.velocity;
+    jumpVelocity = other.jumpVelocity;
+    framesInSpritesheet = other.framesInSpritesheet;
+    currentFrame = other.currentFrame;
+    isInAir = other.isInAir;
+    runningTime = other.runningTime;
+    // set members to default values in "moved from" object
+    other.texture = {};
+    other.source = {};
+    other.position = {};
+    other.velocity = {};
+    other.jumpVelocity = {};
+    other.framesInSpritesheet = {};
+    other.currentFrame = {};
+    other.isInAir = {};
+    other.runningTime = {};
+}
+
+Entity& Entity::operator=(Entity&& other) {
+    if (this == &other) return *this;
+    // copy members to "moved to" object
+    texture = other.texture;
+    source = other.source;
+    position = other.position;
+    velocity = other.velocity;
+    jumpVelocity = other.jumpVelocity;
+    framesInSpritesheet = other.framesInSpritesheet;
+    currentFrame = other.currentFrame;
+    isInAir = other.isInAir;
+    runningTime = other.runningTime;
+    // set members to default values in "moved from" object
+    other.texture = {};
+    other.source = {};
+    other.position = {};
+    other.velocity = {};
+    other.jumpVelocity = {};
+    other.framesInSpritesheet = {};
+    other.currentFrame = {};
+    other.isInAir = {};
+    other.runningTime = {};
+    return *this;
+}
+
 Entity::~Entity() {
     UnloadTexture(texture);
 }
