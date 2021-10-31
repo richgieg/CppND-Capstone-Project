@@ -26,10 +26,6 @@ void Entity::setX(float pixels) {
     position.x = pixels;
 }
 
-void Entity::setVelocityX(float pixelsPerSecond) {
-    velocity.x = pixelsPerSecond;
-}
-
 void Entity::setJumpVelocity(float pixelsPerSecond) {
     jumpVelocity = pixelsPerSecond;
 }
