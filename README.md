@@ -99,7 +99,7 @@ of `Entity`) instances. It calls `update` and `draw` on all entities in the pool
 `getFirstInactive` method which returns the first inactive entity in the pool (useful for `EnemySpawner`, etc.)
 - `EnemySpawner` is responsible for spawning enemies over time
 - `Player` and `Enemy` inherit from `Entity`, since `Entity` implements the common functionality
-fo manipulating a sprite on screen
+for manipulating a sprite on screen
 - `GameOverScreen` is responsible for showing "game over" text and dimming the background
 - `Texture2DHandle` is an RAII wrapper class for unsafe `Texture2D` structures returned by the raylib
 library (representing spritesheets and background images)
