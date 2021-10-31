@@ -12,6 +12,7 @@ third-party C library in a RAII (resource acquisition is initialization) handle 
 - [Run](#run)
 - [Play](#play)
 - [Class Structure](#class-structure)
+- [Rubric](#rubric)
 
 # Prerequisites
 
@@ -108,3 +109,12 @@ indexed by file name. Its `loadAndGetTexture` method is used by `Entity` and `Sc
 their spritesheets/images. This ensures that a particular file is only loaded once and shared pointers
 are used so that the `Texture2DHandle` destructor is called automatically when necessary (and only once).
 
+# Rubric
+
+This project addresses the following rubric items:
+
+## Loops, Functions, I/O
+
+## Object Oriented Programming
+
+## Memory Management
