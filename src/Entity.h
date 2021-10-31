@@ -2,7 +2,9 @@
 #define _ENTITY
 
 #include <string>
+#include <memory>
 #include "raylib.h"
+#include "Texture2DHandle.h"
 
 class Entity {
 public:
@@ -18,7 +20,7 @@ public:
     virtual void update(float deltaSeconds);
     void draw();
 private:
-    Texture2D texture;
+    std::unique_ptr<Texture2DHandle> texturePtr;
     Rectangle source;
     Vector2 position;
     Vector2 velocity;

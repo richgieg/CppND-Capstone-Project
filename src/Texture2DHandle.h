@@ -7,10 +7,10 @@
 class Texture2DHandle {
 public:
     Texture2DHandle(std::string file);
-    Texture2DHandle(const Texture2DHandle&) = delete;
-    Texture2DHandle& operator=(const Texture2DHandle&) = delete;
-    Texture2DHandle(Texture2DHandle&&) = delete;
-    Texture2DHandle& operator=(Texture2DHandle&&) = delete;
+    // Texture2DHandle(const Texture2DHandle&) = delete;
+    // Texture2DHandle& operator=(const Texture2DHandle&) = delete;
+    // Texture2DHandle(Texture2DHandle&&) = delete;
+    // Texture2DHandle& operator=(Texture2DHandle&&) = delete;
     ~Texture2DHandle();
     const Texture2D texture;
 };

@@ -6,8 +6,13 @@ constexpr int defaultJumpVelocity{-600}; // pixels per second
 constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 
 Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet):
-    texture{LoadTexture(spritesheetFile.c_str())},
-    source{0, 0, static_cast<float>(texture.width / columnsInSpritesheet), static_cast<float>(texture.height / rowsInSpritesheet)},
+    texturePtr{std::make_unique<Texture2DHandle>(spritesheetFile)},
+    source{
+        0,
+        0,
+        static_cast<float>(texturePtr->texture.width / columnsInSpritesheet),
+        static_cast<float>(texturePtr->texture.height / rowsInSpritesheet)
+    },
     position{0, GetScreenHeight() - source.height},
     velocity{},
     jumpVelocity{defaultJumpVelocity},
@@ -17,8 +22,7 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     runningTime{} {}
 
 Entity::Entity(Entity&& other) {
-    // copy members to "moved to" object
-    texture = other.texture;
+    texturePtr = std::move(other.texturePtr);
     source = other.source;
     position = other.position;
     velocity = other.velocity;
@@ -27,8 +31,6 @@ Entity::Entity(Entity&& other) {
     currentFrame = other.currentFrame;
     isInAir = other.isInAir;
     runningTime = other.runningTime;
-    // set members to default values in "moved from" object
-    other.texture = {};
     other.source = {};
     other.position = {};
     other.velocity = {};
@@ -41,8 +43,7 @@ Entity::Entity(Entity&& other) {
 
 Entity& Entity::operator=(Entity&& other) {
     if (this == &other) return *this;
-    // copy members to "moved to" object
-    texture = other.texture;
+    texturePtr = std::move(other.texturePtr);
     source = other.source;
     position = other.position;
     velocity = other.velocity;
@@ -51,8 +52,6 @@ Entity& Entity::operator=(Entity&& other) {
     currentFrame = other.currentFrame;
     isInAir = other.isInAir;
     runningTime = other.runningTime;
-    // set members to default values in "moved from" object
-    other.texture = {};
     other.source = {};
     other.position = {};
     other.velocity = {};
@@ -66,7 +65,6 @@ Entity& Entity::operator=(Entity&& other) {
 
 Entity::~Entity() {
     std::cout << "Entity destructor\n";
-    UnloadTexture(texture);
 }
 
 void Entity::setX(float pixels) {
@@ -108,5 +106,5 @@ void Entity::update(float deltaSeconds) {
 }
 
 void Entity::draw() {
-    DrawTextureRec(texture, source, position, WHITE);
+    DrawTextureRec(texturePtr->texture, source, position, WHITE);
 }
