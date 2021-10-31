@@ -19,7 +19,7 @@ public:
     EntityPool(unsigned int size): entities{size} {}
 
     typename std::vector<T>::iterator begin() {
-        return entities.end();
+        return entities.begin();
     }
 
     typename std::vector<T>::iterator end() {
