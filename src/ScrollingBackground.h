@@ -11,7 +11,7 @@ public:
     void draw();
 private:
     std::shared_ptr<Texture2DHandle> farBuildings;
-    Vector2 farBuildingsPosition;
+    float farBuildingsX;
 };
 
 #endif
