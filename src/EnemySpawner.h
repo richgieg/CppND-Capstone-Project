@@ -11,7 +11,7 @@ public:
 private:
     EntityPool<Enemy> *enemies;
     float secondsSinceLastSpawn;
-    int enemiesPerSpawn;
+    int spawnCounter;
 };
 
 #endif
