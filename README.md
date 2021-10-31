@@ -10,6 +10,7 @@ third-party C library in a RAII (resource acquisition is initialization) handle 
 - [Prerequisites](#prerequisites)
 - [Build](#build)
 - [Run](#run)
+- [Play](#play)
 
 # Prerequisites
 
@@ -76,3 +77,11 @@ After building either the debug or release version, run using the steps below.
 
 ## Mac
 `./hipster-hop`
+
+# Play
+
+Hippy the Hipster is out to get a midnight snack. Unfortunately, it's very cold and
+frozen tumbleweeds abound. Jump over them by pressing the space bar.
+
+Spoiler alert: It's a sad story... Hippy will never get that midnight snack. But,
+it can't hurt to try!
