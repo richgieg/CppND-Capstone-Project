@@ -1,3 +1,8 @@
+// Entity
+//
+// Base class for game entities (player, enemies, etc.).
+//
+
 #ifndef _ENTITY
 #define _ENTITY
 
