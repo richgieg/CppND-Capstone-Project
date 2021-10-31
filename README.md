@@ -1,5 +1,8 @@
 # Contents
-[asdf](#prerequisites)
+- [Prerequisites](#prerequisites)
+- [Debug Build](#debug-build)
+- [Release Build](#release-build)
+- [Run](#run)
 
 # Prerequisites
 
