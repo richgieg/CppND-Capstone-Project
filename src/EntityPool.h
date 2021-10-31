@@ -1,3 +1,8 @@
+// EntityPool
+//
+// Manages a pool of entities.
+//
+
 #ifndef _ENTITY_POOL
 #define _ENTITY_POOL
 
