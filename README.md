@@ -42,11 +42,13 @@ C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=h
 
 ## Linux
 ```
+cd richgieg-CppND-Capstone-Project
 make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp BUILD_MODE=DEBUG
 ```
 
 ## Mac
 ```
+cd richgieg-CppND-Capstone-Project
 make PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG
 ```
 
@@ -60,11 +62,13 @@ C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=h
 
 ## Linux
 ```
+cd richgieg-CppND-Capstone-Project
 make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp
 ```
 
 ## Mac
 ```
+cd richgieg-CppND-Capstone-Project
 make PROJECT_NAME=hipster-hop OBJS=src/*.cpp
 ```
 
