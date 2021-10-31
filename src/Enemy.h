@@ -6,6 +6,7 @@
 class Enemy : public Entity {
 public:
     Enemy();
+    void update(float deltaSeconds) override;
 };
 
 #endif
