@@ -4,8 +4,7 @@ This game is called Hipster Hop. It's my capstone project for Udacity's C++ Nano
 
 # Contents
 - [Prerequisites](#prerequisites)
-- [Debug Build](#debug-build)
-- [Release Build](#release-build)
+- [Build](#build)
 - [Run](#run)
 
 # Prerequisites
@@ -35,26 +34,28 @@ git clone https://github.com/richgieg/CppND-Capstone-Project richgieg-CppND-Caps
 cd richgieg-CppND-Capstone-Project
 ```
 
-# Debug Build
+# Build
 
-## Windows
+## Debug
+
+### Windows
 `C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG`
 
-## Linux
+### Linux
 `make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp BUILD_MODE=DEBUG`
 
-## Mac
+### Mac
 `make PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG`
 
-# Release Build
+## Release
 
-## Windows
+### Windows
 `C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp`
 
-## Linux
+### Linux
 `make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp`
 
-## Mac
+### Mac
 `make PROJECT_NAME=hipster-hop OBJS=src/*.cpp`
 
 # Run
