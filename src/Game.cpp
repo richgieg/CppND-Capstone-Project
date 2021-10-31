@@ -2,14 +2,16 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-Game::Game(): nebulas{5} {}
+constexpr int enemyPoolSize = 5;
+
+Game::Game(): enemies{enemyPoolSize} {}
 
 void Game::update(float deltaSeconds) {
     player.update(deltaSeconds);
-    nebulas.update(deltaSeconds);
+    enemies.update(deltaSeconds);
 }
 
 void Game::draw() {
     player.draw();
-    nebulas.draw();
+    enemies.draw();
 }

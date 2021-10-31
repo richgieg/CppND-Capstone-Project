@@ -2,7 +2,7 @@
 #define _GAME
 
 #include "Player.h"
-#include "Nebula.h"
+#include "Enemy.h"
 #include "EntityPool.h"
 
 class Game {
@@ -12,7 +12,7 @@ public:
     void draw();
 private:
     Player player;
-    EntityPool<Nebula> nebulas;
+    EntityPool<Enemy> enemies;
 };
 
 #endif
