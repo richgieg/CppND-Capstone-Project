@@ -3,11 +3,11 @@
 
 constexpr int width{1200};
 constexpr int height{380};
-constexpr char name[]{"Game"};
+constexpr char windowName[]{"Game"};
 
 int main() {
     SetConfigFlags(FLAG_VSYNC_HINT);
-    InitWindow(width, height, name);
+    InitWindow(width, height, windowName);
     Game game;
     while (!WindowShouldClose()) {
         game.update(GetFrameTime());
