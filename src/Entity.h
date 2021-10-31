@@ -9,8 +9,8 @@
 class Entity {
 public:
     Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet);
-    Entity(const Entity&) = delete; // disallow copy construction
-    Entity& operator=(const Entity&) = delete; // disallow copy assignment
+    Entity(const Entity&) = delete; // disable copy constructor
+    Entity& operator=(const Entity&) = delete; // disable copy assignment
     Entity(Entity&&); // move constructor
     Entity& operator=(Entity&&); // move assignment
     ~Entity();
