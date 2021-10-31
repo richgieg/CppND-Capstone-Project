@@ -56,6 +56,7 @@ void Entity::jump() {
     }
 }
 
+// Returns true if this entity collides with the other entity.
 bool Entity::collidesWith(Entity& other) {
     auto thisRec = Rectangle{position.x, position.y, source.width, source.height};
     auto otherRec = Rectangle{other.position.x, other.position.y, other.source.width, other.source.height};
