@@ -18,6 +18,7 @@ public:
     void update(float deltaSeconds);
     void draw();
 private:
+    void checkForCollision();
     ScrollingBackground scrollingBackground;
     Player player;
     EntityPool<Enemy> enemies;
