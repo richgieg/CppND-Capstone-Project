@@ -36,6 +36,9 @@ cd richgieg-CppND-Capstone-Project
 
 # Build
 
+Now that the prerequisites are installed, you can build the game. Create a debug
+build if you intend to run with a debugger. Otherwise, create a release build.
+
 ## Debug
 
 ### Windows
