@@ -18,6 +18,10 @@ Entity::~Entity() {
     UnloadTexture(texture);
 }
 
+void Entity::setX(float value) {
+    position.x = value;
+}
+
 void Entity::update(float deltaSeconds) {
     position.x += velocity.x * deltaSeconds;
     position.y += velocity.y * deltaSeconds;

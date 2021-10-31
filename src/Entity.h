@@ -8,6 +8,7 @@ class Entity {
 public:
     Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet);
     ~Entity();
+    void setX(float value);
     void update(float deltaSeconds);
     void draw();
 private:

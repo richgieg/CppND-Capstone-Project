@@ -1,7 +1,9 @@
 #include "raylib.h"
 #include "Game.h"
 
-Game::Game(): scarfy{} {}
+Game::Game() {
+    nebula.setX(200);
+}
 
 void Game::update(float deltaSeconds) {
     scarfy.update(deltaSeconds);
