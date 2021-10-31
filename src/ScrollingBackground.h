@@ -1,6 +1,7 @@
 #ifndef _SCROLLING_BACKGROUND
 #define _SCROLLING_BACKGROUND
 
+#include <memory>
 #include "Entity.h"
 
 class ScrollingBackground {
@@ -9,7 +10,8 @@ public:
     void update(float deltaSeconds);
     void draw();
 private:
-    Entity backBuildings;
+    std::shared_ptr<Texture2DHandle> farBuildings;
+    Vector2 farBuildingsPosition;
 };
 
 #endif

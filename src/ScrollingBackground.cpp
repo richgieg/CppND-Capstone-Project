@@ -1,15 +1,14 @@
 #include "ScrollingBackground.h"
+#include "TextureManager.h"
 
 ScrollingBackground::ScrollingBackground():
-    backBuildings{"textures/far-buildings.png", 1, 1, 1}
-{
-    backBuildings.setActive(true);
-}
+    farBuildings{textureManager.getTexture("textures/far-buildings.png")},
+    farBuildingsPosition{} {}
 
 void ScrollingBackground::update(float deltaMs) {
-    backBuildings.update(deltaMs);
+
 }
 
 void ScrollingBackground::draw() {
-    backBuildings.draw();
+    DrawTextureEx(farBuildings->texture, farBuildingsPosition, 0.0, 2.0, WHITE);
 }
