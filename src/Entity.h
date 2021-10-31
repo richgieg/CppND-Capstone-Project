@@ -1,7 +1,7 @@
 // Entity
 //
 // Base class for game entities (player, enemies, etc.).
-// Implements common behavior for manipulation a sprite on screen.
+// Implements common functionality for manipulating a sprite on screen.
 //
 
 #ifndef _ENTITY
