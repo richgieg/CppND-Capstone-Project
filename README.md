@@ -30,47 +30,32 @@ Description from raylib website: "raylib is a simple and easy-to-use library to 
   - Use Homebrew option
 
 # Clone Repository
-`git clone https://github.com/richgieg/CppND-Capstone-Project richgieg-CppND-Capstone-Project`
+```
+git clone https://github.com/richgieg/CppND-Capstone-Project richgieg-CppND-Capstone-Project
+cd richgieg-CppND-Capstone-Project
+```
 
 # Debug Build
 
 ## Windows
-```
-cd richgieg-CppND-Capstone-Project
-C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG
-```
+`C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG`
 
 ## Linux
-```
-cd richgieg-CppND-Capstone-Project
-make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp BUILD_MODE=DEBUG
-```
+`make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp BUILD_MODE=DEBUG`
 
 ## Mac
-```
-cd richgieg-CppND-Capstone-Project
-make PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG
-```
+`make PROJECT_NAME=hipster-hop OBJS=src/*.cpp BUILD_MODE=DEBUG`
 
 # Release Build
 
 ## Windows
-```
-cd richgieg-CppND-Capstone-Project
-C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp
-```
+`C:/raylib/mingw/bin/mingw32-make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=hipster-hop OBJS=src/*.cpp`
 
 ## Linux
-```
-cd richgieg-CppND-Capstone-Project
-make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp
-```
+`make PROJECT_NAME=hipster-hop RAYLIB_LIBTYPE=SHARED OBJS=src/*.cpp`
 
 ## Mac
-```
-cd richgieg-CppND-Capstone-Project
-make PROJECT_NAME=hipster-hop OBJS=src/*.cpp
-```
+`make PROJECT_NAME=hipster-hop OBJS=src/*.cpp`
 
 # Run
 After building either the debug or release version, run using the steps below.
