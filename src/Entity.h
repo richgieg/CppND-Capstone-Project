@@ -25,7 +25,7 @@ public:
     virtual void update(float deltaSeconds);
     void draw();
 private:
-    std::unique_ptr<Texture2DHandle> texturePtr;
+    std::shared_ptr<Texture2DHandle> texturePtr;
     Rectangle source;
     Vector2 position;
     Vector2 velocity;

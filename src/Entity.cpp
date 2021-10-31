@@ -1,12 +1,13 @@
 #include <iostream>
 #include "Entity.h"
+#include "TextureManager.h"
 
 constexpr int gravityAcceleration{1'000}; // pixels per second per second
 constexpr int defaultJumpVelocity{-600}; // pixels per second
 constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
 
 Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet):
-    texturePtr{std::make_unique<Texture2DHandle>(spritesheetFile)},
+    texturePtr{textureManager.get(spritesheetFile)},
     source{
         0,
         0,
