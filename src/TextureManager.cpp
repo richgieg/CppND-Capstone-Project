@@ -2,7 +2,12 @@
 #include "raylib.h"
 #include "TextureManager.h"
 
-std::shared_ptr<Texture2DHandle> TextureManager::get(std::string file) {
+static TextureManager::TextureManager& getInstance() {
+    static TextureManager instance; // Instantiated on first use.
+    return instance;
+}
+
+std::shared_ptr<Texture2DHandle> TextureManager::getTexture(std::string file) {
     auto iterator = textureHandleMap.find(file);
     if (iterator != textureHandleMap.end()) { // already in map
         std::cout << "already in map: " << file << "\n";
@@ -14,6 +19,3 @@ std::shared_ptr<Texture2DHandle> TextureManager::get(std::string file) {
         return handle;
     }
 }
-
-// Global TextureManager singleton
-TextureManager textureManager;
