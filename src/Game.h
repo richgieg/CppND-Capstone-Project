@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "EntityPool.h"
+#include "EnemySpawner.h"
 
 class Game {
 public:
@@ -13,6 +14,7 @@ public:
 private:
     Player player;
     EntityPool<Enemy> enemies;
+    EnemySpawner enemySpawner;
 };
 
 #endif

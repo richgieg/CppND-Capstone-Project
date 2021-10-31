@@ -5,7 +5,7 @@
 
 constexpr int enemyPoolSize = 5;
 
-Game::Game(): enemies{enemyPoolSize} {
+Game::Game(): enemies{enemyPoolSize}, enemySpawner{&enemies} {
     auto enemyIterator = std::find_if(enemies.begin(), enemies.end(), [](Enemy& enemy) {
         return enemy.getX() >= GetScreenWidth();
     });
@@ -17,6 +17,7 @@ Game::Game(): enemies{enemyPoolSize} {
 void Game::update(float deltaSeconds) {
     player.update(deltaSeconds);
     enemies.update(deltaSeconds);
+    enemySpawner.update(deltaSeconds);
 }
 
 void Game::draw() {
