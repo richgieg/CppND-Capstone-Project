@@ -184,8 +184,8 @@ See:
 ### The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.
 `TextureManager` maintains an `unordered_map` of `shared_ptr<Texture2DHandle>` instances and
 hands out copies of shared pointers as requested. When the last `shared_ptr<Texture2DHandle>`
-goes out of scope then the `Texture2DHandle` runs, which unloads the unsafe `Texture2D` structure
-loaded by raylib library (see previous rubric item).
+goes out of scope then the `Texture2DHandle` destructor runs, which unloads the unsafe `Texture2D`
+structure loaded by raylib library (see previous rubric item).
 
 See: `TextureManager.cpp` and `Texture2DHandle.cpp`
 
