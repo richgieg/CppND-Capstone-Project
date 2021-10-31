@@ -1,6 +1,6 @@
 # Intro
 
-This is my game Hipster Hop that I created as my capstone project in Udacity's C++ Nanodegree course.
+Hipster Hop is a game that I created as my capstone project in Udacity's C++ Nanodegree course.
 
 This project demonstrates various C++ control structures, object-oriented programming, modern C++
 memory management techniques using smart pointers, as well as wrapping unsafe structures from a
@@ -11,6 +11,7 @@ third-party C library in a RAII (resource acquisition is initialization) handle 
 - [Build](#build)
 - [Run](#run)
 - [Play](#play)
+- [Class Structure](#class-structure)
 
 # Prerequisites
 
@@ -85,3 +86,7 @@ frozen tumbleweeds abound. Jump over them by pressing the space bar.
 
 Spoiler alert: It's a sad story... Hippy will never get that midnight snack. But,
 at least it's fun to try!
+
+# Class Structure
+
+Everything starts in `main.cpp`.
