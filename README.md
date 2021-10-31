@@ -170,8 +170,15 @@ See: `EntityPool.h` line 14
 See: `ScrollingBackground.h` lines 18 and 19, and `ScrollingBackground.cpp` lines 23 and 36
 
 ### The project uses destructors appropriately.
-See: `Texture2DHandle.cpp` line 8 (unloads unsafe Texture2D structure loaded by raylib library)
+See: `Texture2DHandle.cpp` line 8 (unloads unsafe `Texture2D` structure loaded by raylib library)
 
 ### The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.
+`TextureManager` maintains a map of `shared_ptr<Texture2DHandle>` and hands out copies of
+shared pointers as requested. When the last `shared_ptr<Texture2DHandle>` goes out of scope
+then the `Texture2DHandle` runs, which unloads the unsafe `Texture2D` structure loaded by
+raylib library (see previous rubric item).
+
+See: `TextureManager.cpp` and `Texture2DHandle.cpp`
+
 ### The project follows the Rule of 5.
 ### The project uses smart pointers instead of raw pointers.
