@@ -1,11 +1,11 @@
-#ifndef _SCARFY
-#define _SCARFY
+#ifndef _PLAYER
+#define _PLAYER
 
 #include "Entity.h"
 
-class Scarfy : public Entity {
+class Player : public Entity {
 public:
-    Scarfy();
+    Player();
     void update(float deltaSeconds) override;
 };
 

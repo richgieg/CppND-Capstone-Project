@@ -1,7 +1,7 @@
 #ifndef _GAME
 #define _GAME
 
-#include "Scarfy.h"
+#include "Player.h"
 #include "Nebula.h"
 #include "EntityPool.h"
 
@@ -11,7 +11,7 @@ public:
     void update(float deltaSeconds);
     void draw();
 private:
-    Scarfy scarfy;
+    Player player;
     EntityPool<Nebula> nebulas;
 };
 
