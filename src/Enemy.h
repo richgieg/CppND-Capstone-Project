@@ -1,3 +1,8 @@
+// Enemy
+//
+// Implements the game's enemy entity.
+//
+
 #ifndef _ENEMY
 #define _ENEMY
 

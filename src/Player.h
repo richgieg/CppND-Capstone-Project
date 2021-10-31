@@ -1,3 +1,8 @@
+// Player
+//
+// Implements the game's player entity.
+//
+
 #ifndef _PLAYER
 #define _PLAYER
 

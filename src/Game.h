@@ -1,3 +1,8 @@
+// Game
+//
+// Implements the game.
+//
+
 #ifndef _GAME
 #define _GAME
 

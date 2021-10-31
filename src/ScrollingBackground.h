@@ -1,3 +1,8 @@
+// ScrollingBackground
+//
+// Implements the game's scrolling background.
+//
+
 #ifndef _SCROLLING_BACKGROUND
 #define _SCROLLING_BACKGROUND
 
