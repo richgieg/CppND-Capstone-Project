@@ -1,13 +1,13 @@
 #include "raylib.h"
 #include "Game.h"
 
-constexpr int width{1200};
-constexpr int height{380};
+constexpr int windowWidth{1200};
+constexpr int windowHeight{380};
 constexpr char windowName[]{"Game"};
 
 int main() {
     SetConfigFlags(FLAG_VSYNC_HINT);
-    InitWindow(width, height, windowName);
+    InitWindow(windowWidth, windowHeight, windowName);
     Game game;
     while (!WindowShouldClose()) {
         game.update(GetFrameTime());
