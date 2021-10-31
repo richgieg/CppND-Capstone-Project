@@ -1,4 +1,4 @@
-![](hipster-hop.png?raw=true)
+![](hipster-hop-screenshot.png?raw=true)
 
 # Intro
 
