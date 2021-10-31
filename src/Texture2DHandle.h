@@ -4,7 +4,7 @@
 // Uses RAII (constructor acquires resource and destructor frees the resource).
 //
 // An instance of Texture2DHandle cannot be copied or moved.
-// Should be managed by a unique_ptr.
+// Designed to be managed by a smart pointer.
 //
 
 #ifndef _TEXTURE_2D_HANDLE

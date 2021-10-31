@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include "Game.h"
+#include "TextureManager.h"
 
 Game::Game(): nebulas{5} {}
 
