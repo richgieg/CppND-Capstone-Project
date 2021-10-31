@@ -11,7 +11,9 @@ public:
     void draw();
 private:
     std::shared_ptr<Texture2DHandle> farBuildings;
+    std::shared_ptr<Texture2DHandle> backBuildings;
     float farBuildingsX;
+    float backBuildingsX;
 };
 
 #endif
