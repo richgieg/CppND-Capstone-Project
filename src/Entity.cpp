@@ -64,7 +64,8 @@ Entity& Entity::operator=(Entity&& other) {
 }
 
 Entity::~Entity() {
-    std::cout << "Entity destructor\n";
+    // Nothing to do here.
+    // Texture2DHandle destruction is automatically managed by unique_ptr (texturePtr).
 }
 
 void Entity::setX(float pixels) {
