@@ -97,5 +97,9 @@ an `EnemySpawner` instance, a `Player` instance, and a `GameOverScreen` instance
 - `EnemySpawner` is responsible for spawning enemies
 - `Player` and `Enemy` inherit from `Entity`, since `Entity` implements the common behavior of
 manipulating a sprite on screen
-- `Texture2DHandle` is an RAII wrapper class for unsafe `Texture2D` structures returned by the raylib library (representing spritesheets and background images)
-- `TextureManager` uses an `unordered_map` to maintain a cache of `shared_pointer<Texture2DHandle>` indexed by file name
+- `Texture2DHandle` is an RAII wrapper class for unsafe `Texture2D` structures returned by the raylib
+library (representing spritesheets and background images)
+- `TextureManager` uses an `unordered_map` to maintain a cache of `shared_ptr<Texture2DHandle>`
+indexed by file name. Its `loadAndGetTexture` method is used by `Entity` and `ScrollingBackground` to load
+their spritesheets/images. This ensures that a particular file is only loaded once and shared pointers
+are used so that the `Texture2DHandle` destructor is called automatically when necessary (and only once).
