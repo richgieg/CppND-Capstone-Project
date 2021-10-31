@@ -88,6 +88,8 @@ frozen tumbleweeds abound. Jump over them by pressing the space bar.
 Spoiler alert: It's a sad story... Hippy will never get that midnight snack. But,
 at least it's fun to try!
 
+NOTE: When you lose you have to close the window and relaunch the game to play again.
+
 # Class Structure
 
 - Everything starts in `main.cpp`
