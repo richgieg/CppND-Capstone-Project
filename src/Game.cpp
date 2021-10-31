@@ -5,14 +5,7 @@
 
 constexpr int enemyPoolSize{5};
 
-Game::Game(): enemies{enemyPoolSize}, enemySpawner{&enemies} {
-    auto enemyIterator = std::find_if(enemies.begin(), enemies.end(), [](Enemy& enemy) {
-        return enemy.getX() >= GetScreenWidth();
-    });
-    if (enemyIterator != enemies.end()) {
-        (*enemyIterator).setVelocityX(-1000);
-    }
-}
+Game::Game(): enemies{enemyPoolSize}, enemySpawner{&enemies} {}
 
 void Game::update(float deltaSeconds) {
     player.update(deltaSeconds);
