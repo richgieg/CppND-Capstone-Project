@@ -1,6 +1,6 @@
 ![](hipster-hop-screenshot.png?raw=true)
 
-# Intro
+# Hipster Hop
 
 Hipster Hop is a game that I created as my capstone project in Udacity's C++ Nanodegree course.
 
