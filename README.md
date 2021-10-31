@@ -84,4 +84,4 @@ Hippy the Hipster is out to get a midnight snack. Unfortunately, it's very cold 
 frozen tumbleweeds abound. Jump over them by pressing the space bar.
 
 Spoiler alert: It's a sad story... Hippy will never get that midnight snack. But,
-it can't hurt to try!
+at least it's fun to try!
