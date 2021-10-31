@@ -2,6 +2,10 @@
 
 This is my game Hipster Hop that I created as my capstone project in Udacity's C++ Nanodegree course.
 
+This project demonstrates various C++ control structures, object-oriented programming, modern C++
+memory management techniques using smart pointers, as well as wrapping unsafe structures from a
+third-party C library in a RAII (resource acquisition is initialization) handle class to ensure cleanup.
+
 # Contents
 - [Prerequisites](#prerequisites)
 - [Build](#build)
