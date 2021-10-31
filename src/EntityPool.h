@@ -12,6 +12,12 @@ template<typename T>
 class EntityPool {
 public:
     EntityPool(unsigned int size): entities{size} {}
+    typename std::vector<T>::iterator begin() {
+        return entities.begin();
+    }
+    typename std::vector<T>::iterator end() {
+        return entities.end();
+    }
     void update(float deltaSeconds) {
         for (auto& entity : entities) {
             entity.update(deltaSeconds);
@@ -21,18 +27,6 @@ public:
         for (auto& entity : entities) {
             entity.draw();
         }
-    }
-    T& findIf() {
-
-    }
-    typename std::vector<T>::iterator begin() {
-        return entities.begin();
-    }
-    typename std::vector<T>::iterator end() {
-        return entities.end();
-    }
-    std::vector<T> getEntities() {
-        return entities;
     }
 private:
     std::vector<T> entities;
