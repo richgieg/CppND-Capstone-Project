@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "Game.h"
 
-constexpr int width{512};
+constexpr int width{1200};
 constexpr int height{380};
 constexpr char name[] = "Game";
 
