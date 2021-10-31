@@ -75,7 +75,7 @@ After building either the debug or release version, run using the steps below.
 `hipster-hop` (or `.\hipster-hop.exe` if using PowerShell)
 
 ## Linux
-./hipster-hop
+`./hipster-hop`
 
 ## Mac
-./hipster-hop
+`./hipster-hop`
