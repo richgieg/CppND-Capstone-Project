@@ -3,7 +3,7 @@
 
 constexpr int gravityAcceleration{1'000}; // pixels per second per second
 constexpr int defaultJumpVelocity{-600}; // pixels per second
-constexpr float updateTime{1.0 / 12.0}; // 12 frames per second
+constexpr float frameUpdateSeconds{1.0 / 12.0}; // 12 frames per second
 
 Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet):
     texturePtr{TextureManager::getInstance().getTexture(spritesheetFile)},
@@ -70,8 +70,8 @@ void Entity::update(float deltaSeconds) {
         }
         if (!isInAir) {
             runningTime += deltaSeconds;
-            if (runningTime >= updateTime) {
-                runningTime = runningTime - updateTime;
+            if (runningTime >= frameUpdateSeconds) {
+                runningTime = 0;
                 source.x = currentFrame * source.width;
                 currentFrame++;
                 if (currentFrame >= framesInSpritesheet) {
