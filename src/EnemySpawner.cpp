@@ -15,7 +15,7 @@ void EnemySpawner::update(float deltaSeconds) {
             return enemy.getX() >= GetScreenWidth();
         });
         if (enemyIterator != enemies->end()) {
-            (*enemyIterator).setVelocityX(-1000);
+            enemyIterator->setVelocityX(-1000);
         }
     }
 }
