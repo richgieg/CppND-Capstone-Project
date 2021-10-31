@@ -89,4 +89,13 @@ at least it's fun to try!
 
 # Class Structure
 
-Everything starts in `main.cpp`.
+- Everything starts in `main.cpp`
+- `main.cpp` creates an instance of `Game`, repeatedly calling `update` and `draw` methods
+as long as the window is open
+- `Game` creates a `ScrollingBackground` instance, an `EntityPool` instance containing `Enemy` instances,
+an `EnemySpawner` instance, a `Player` instance, and a `GameOverScreen` instance
+- `EnemySpawner` is responsible for spawning enemies
+- `Player` and `Enemy` inherit from `Entity`, since `Entity` implements the common behavior of
+manipulating a sprite on screen
+- `Texture2DHandle` is an RAII wrapper class for unsafe `Texture2D` structures returned by the raylib library (representing spritesheets and background images)
+- `TextureManager` uses an `unordered_map` to maintain a cache of `shared_pointer<Texture2DHandle>` indexed by file name
