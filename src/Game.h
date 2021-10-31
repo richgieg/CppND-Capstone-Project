@@ -3,6 +3,7 @@
 
 #include "Scarfy.h"
 #include "Nebula.h"
+#include "EntityPool.h"
 
 class Game {
 public:
@@ -11,7 +12,8 @@ public:
     void draw();
 private:
     Scarfy scarfy;
-    Nebula nebula;
+    // Nebula nebula;
+    EntityPool<Nebula> nebulas;
 };
 
 #endif
