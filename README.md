@@ -165,7 +165,10 @@ See: `Player.h` line 14, `Player.cpp` line 8, `Entity.h` line 27, and `Entity.cp
 See: `EntityPool.h` line 14
 
 ## Memory Management
+
 ### The project makes use of references in function declarations.
+See: `ScrollingBackground.h` lines 18 and 19, and `ScrollingBackground.cpp` lines 23 and 36
+
 ### The project uses destructors appropriately.
 ### The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.
 ### The project follows the Rule of 5.
