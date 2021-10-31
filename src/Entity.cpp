@@ -25,6 +25,10 @@ float Entity::getWidth() {
     return source.width;
 }
 
+float Entity::getX() const {
+    return position.x;
+}
+
 void Entity::setX(float pixels) {
     position.x = pixels;
 }

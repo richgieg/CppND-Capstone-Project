@@ -22,6 +22,18 @@ public:
             entity.draw();
         }
     }
+    T& findIf() {
+
+    }
+    typename std::vector<T>::iterator begin() {
+        return entities.begin();
+    }
+    typename std::vector<T>::iterator end() {
+        return entities.end();
+    }
+    std::vector<T> getEntities() {
+        return entities;
+    }
 private:
     std::vector<T> entities;
 };
