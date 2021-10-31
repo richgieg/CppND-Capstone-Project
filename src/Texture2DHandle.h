@@ -16,7 +16,7 @@
 class Texture2DHandle {
 public:
     Texture2DHandle(std::string file);
-    // Cannot be copied or moved. Meant to be managed by unique_ptr.
+    // Cannot be copied or moved. Meant to be managed by a smart pointer.
     Texture2DHandle(const Texture2DHandle&) = delete;
     Texture2DHandle& operator=(const Texture2DHandle&) = delete;
     Texture2DHandle(Texture2DHandle&&) = delete;
