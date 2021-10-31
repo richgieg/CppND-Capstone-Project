@@ -27,6 +27,12 @@ void Entity::setJumpVelocity(float pixelsPerSecond) {
     jumpVelocity = pixelsPerSecond;
 }
 
+void Entity::jump() {
+    if (!isInAir) {
+        velocity.y += jumpVelocity;
+    }
+}
+
 void Entity::update(float deltaSeconds) {
     position.x += velocity.x * deltaSeconds;
     position.y += velocity.y * deltaSeconds;
@@ -37,9 +43,6 @@ void Entity::update(float deltaSeconds) {
     } else {
         velocity.y += gravityAcceleration * deltaSeconds;
         isInAir = true;
-    }
-    if (IsKeyPressed(KEY_SPACE) && !isInAir) {
-        velocity.y += jumpVelocity;
     }
     if (!isInAir) {
         runningTime += deltaSeconds;

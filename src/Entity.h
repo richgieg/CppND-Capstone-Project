@@ -10,7 +10,8 @@ public:
     ~Entity();
     void setX(float pixels);
     void setJumpVelocity(float pixelsPerSecond);
-    void update(float deltaSeconds);
+    void jump();
+    virtual void update(float deltaSeconds);
     void draw();
 private:
     Texture2D texture;

@@ -6,6 +6,7 @@
 class Scarfy : public Entity {
 public:
     Scarfy();
+    void update(float deltaSeconds) override;
 };
 
 #endif
