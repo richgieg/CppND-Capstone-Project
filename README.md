@@ -1,3 +1,6 @@
+# Contents
+[asdf](#prerequisites)
+
 # Prerequisites
 
 ## raylib
