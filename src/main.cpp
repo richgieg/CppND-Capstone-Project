@@ -3,7 +3,7 @@
 
 constexpr int width{1200};
 constexpr int height{380};
-constexpr char name[] = "Game";
+constexpr char name[]{"Game"};
 
 int main() {
     SetConfigFlags(FLAG_VSYNC_HINT);

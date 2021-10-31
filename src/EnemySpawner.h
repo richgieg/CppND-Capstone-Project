@@ -10,6 +10,7 @@ public:
     void update(float deltaSeconds);
 private:
     EntityPool<Enemy> *enemies;
+    float secondsSinceLastSpawn;
 };
 
 #endif

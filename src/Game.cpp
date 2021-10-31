@@ -3,7 +3,7 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-constexpr int enemyPoolSize = 5;
+constexpr int enemyPoolSize{5};
 
 Game::Game(): enemies{enemyPoolSize}, enemySpawner{&enemies} {
     auto enemyIterator = std::find_if(enemies.begin(), enemies.end(), [](Enemy& enemy) {
