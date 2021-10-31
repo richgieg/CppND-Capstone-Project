@@ -5,22 +5,30 @@
 
 constexpr int enemyPoolSize{50}; // max number of simultaneous enemies
 
-Game::Game(): enemies{enemyPoolSize}, enemySpawner{&enemies} {}
+Game::Game():
+    enemies{enemyPoolSize},
+    enemySpawner{&enemies},
+    gameOver{} {}
 
 void Game::update(float deltaSeconds) {
-    checkForCollision();
-    scrollingBackground.update(deltaSeconds);
-    player.update(deltaSeconds);
-    enemies.update(deltaSeconds);
-    enemySpawner.update(deltaSeconds);
+    if (!gameOver) {
+        if (checkForCollision()) {
+            gameOver = true;
+        }
+        scrollingBackground.update(deltaSeconds);
+        player.update(deltaSeconds);
+        enemies.update(deltaSeconds);
+        enemySpawner.update(deltaSeconds);
+    }
 }
 
-void Game::checkForCollision() {
+bool Game::checkForCollision() {
     for (auto& enemy : enemies) {
         if (enemy.getActive() && player.collidesWith(enemy)) {
-            std::cout << "collision\n";
+            return true;
         }
     }
+    return false;
 }
 
 void Game::draw() {
