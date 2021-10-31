@@ -14,30 +14,30 @@ ScrollingBackground::ScrollingBackground():
     backBuildingsX{},
     foregroundX{} {}
 
-void updateLayerX(float deltaSeconds, float& x, const float& scrollSpeed, const Texture2D& texture) {
-    x += scrollSpeed * deltaSeconds;
-    if (x <= -texture.width * textureScale) {
-        x = 0;
-    }
-}
-
 void ScrollingBackground::update(float deltaSeconds) {
     updateLayerX(deltaSeconds, farBuildingsX, farBuildingsScrollSpeed, farBuildings->texture);
     updateLayerX(deltaSeconds, backBuildingsX, backBuildingsScrollSpeed, backBuildings->texture);
     updateLayerX(deltaSeconds, foregroundX, foregroundScrollSpeed, foreground->texture);
 }
 
-void drawLayer(const float& x, const Texture2D& texture) {
-    Vector2 position{x, 0.0};
-    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
-    position.x += texture.width * textureScale;
-    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
-    position.x += texture.width * textureScale;
-    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
+void ScrollingBackground::updateLayerX(float deltaSeconds, float& x, const float& scrollSpeed, const Texture2D& texture) {
+    x += scrollSpeed * deltaSeconds;
+    if (x <= -texture.width * textureScale) {
+        x = 0;
+    }
 }
 
 void ScrollingBackground::draw() {
     drawLayer(farBuildingsX, farBuildings->texture);
     drawLayer(backBuildingsX, backBuildings->texture);
     drawLayer(foregroundX, foreground->texture);
+}
+
+void ScrollingBackground::drawLayer(const float& x, const Texture2D& texture) {
+    Vector2 position{x, 0.0};
+    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
+    position.x += texture.width * textureScale;
+    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
+    position.x += texture.width * textureScale;
+    DrawTextureEx(texture, position, 0.0, textureScale, WHITE);
 }
