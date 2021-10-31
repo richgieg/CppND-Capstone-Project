@@ -14,11 +14,6 @@
 class Entity {
 public:
     Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet);
-    Entity(const Entity&) = delete; // disable copy constructor
-    Entity& operator=(const Entity&) = delete; // disable copy assignment
-    Entity(Entity&&); // move constructor
-    Entity& operator=(Entity&&); // move assignment
-    ~Entity();
     void setX(float pixels);
     void setJumpVelocity(float pixelsPerSecond);
     void jump();

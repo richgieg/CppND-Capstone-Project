@@ -22,53 +22,6 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     isInAir{},
     runningTime{} {}
 
-Entity::Entity(Entity&& other) {
-    texturePtr = std::move(other.texturePtr); // transfer ownership
-    source = other.source;
-    position = other.position;
-    velocity = other.velocity;
-    jumpVelocity = other.jumpVelocity;
-    framesInSpritesheet = other.framesInSpritesheet;
-    currentFrame = other.currentFrame;
-    isInAir = other.isInAir;
-    runningTime = other.runningTime;
-    other.source = {};
-    other.position = {};
-    other.velocity = {};
-    other.jumpVelocity = {};
-    other.framesInSpritesheet = {};
-    other.currentFrame = {};
-    other.isInAir = {};
-    other.runningTime = {};
-}
-
-Entity& Entity::operator=(Entity&& other) {
-    if (this == &other) return *this;
-    texturePtr = std::move(other.texturePtr); // transfer ownership
-    source = other.source;
-    position = other.position;
-    velocity = other.velocity;
-    jumpVelocity = other.jumpVelocity;
-    framesInSpritesheet = other.framesInSpritesheet;
-    currentFrame = other.currentFrame;
-    isInAir = other.isInAir;
-    runningTime = other.runningTime;
-    other.source = {};
-    other.position = {};
-    other.velocity = {};
-    other.jumpVelocity = {};
-    other.framesInSpritesheet = {};
-    other.currentFrame = {};
-    other.isInAir = {};
-    other.runningTime = {};
-    return *this;
-}
-
-Entity::~Entity() {
-    // Nothing to do here.
-    // Texture2DHandle destruction is automatically managed by unique_ptr (texturePtr).
-}
-
 void Entity::setX(float pixels) {
     position.x = pixels;
 }
