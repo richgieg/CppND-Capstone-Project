@@ -134,7 +134,15 @@ See:
 See [Class Structure](#class-structure) and corresponding header and code files for more info.
 
 ### Classes use appropriate access specifiers for class members.
+See `Entity.h` for an example of private data members and public methods.
+
 ### Class constructors utilize member initialization lists.
+I make heavy use of initialization lists in this project in order to ensure that
+all primitive members are initialized to their default values at the very least,
+and also to initialize members with arguments where arguments are given.
+
+See: `Entity.cpp` line 8
+
 ### Classes abstract implementation details from their interfaces.
 ### Classes encapsulate behavior.
 ### Classes follow an appropriate inheritance hierarchy.
