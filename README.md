@@ -187,4 +187,6 @@ deletes the copy constructor, copy assignment operator, move constructor, and mo
 The rationale for deleting these is to prevent copying and moving Texture2DHandles and thus strongly
 encourage that they are managed by smart pointers.
 
+See: `Texture2DHandle.h` line 19
+
 ### The project uses smart pointers instead of raw pointers.
