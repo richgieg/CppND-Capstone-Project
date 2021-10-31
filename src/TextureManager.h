@@ -15,7 +15,7 @@ class TextureManager {
 public:
     // Finds a texture in cache and returns it.
     // If not loaded yet then it is loaded, stored in the cache, and returned.
-    std::shared_ptr<Texture2DHandle> getTexture(std::string file);
+    std::shared_ptr<Texture2DHandle> loadAndGetTexture(std::string file);
 private:
     std::unordered_map<std::string, std::shared_ptr<Texture2DHandle>> textureHandleMap;
 };

@@ -7,9 +7,9 @@ constexpr int foregroundScrollSpeed = -100; // pixels per second
 constexpr float textureScale = 2.0;
 
 ScrollingBackground::ScrollingBackground():
-    farBuildings{textureManager.getTexture("textures/far-buildings.png")},
-    backBuildings{textureManager.getTexture("textures/back-buildings.png")},
-    foreground{textureManager.getTexture("textures/foreground.png")},
+    farBuildings{textureManager.loadAndGetTexture("textures/far-buildings.png")},
+    backBuildings{textureManager.loadAndGetTexture("textures/back-buildings.png")},
+    foreground{textureManager.loadAndGetTexture("textures/foreground.png")},
     farBuildingsX{},
     backBuildingsX{},
     foregroundX{} {}

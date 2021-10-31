@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "TextureManager.h"
 
-std::shared_ptr<Texture2DHandle> TextureManager::getTexture(std::string file) {
+std::shared_ptr<Texture2DHandle> TextureManager::loadAndGetTexture(std::string file) {
     auto iterator = textureHandleMap.find(file);
     if (iterator != textureHandleMap.end()) { // already in map
         return iterator->second;
