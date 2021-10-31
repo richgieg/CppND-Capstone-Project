@@ -19,7 +19,8 @@ Entity::Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsIn
     framesInSpritesheet{framesInSpritesheet},
     currentFrame{},
     isInAir{},
-    runningTime{} {}
+    runningTime{},
+    active{} {}
 
 float Entity::getWidth() {
     return source.width;
@@ -41,6 +42,14 @@ void Entity::setJumpVelocity(float pixelsPerSecond) {
     jumpVelocity = pixelsPerSecond;
 }
 
+bool Entity::getActive() {
+    return active;
+}
+
+void Entity::setActive(bool value) {
+    active = value;
+}
+
 void Entity::jump() {
     if (!isInAir) {
         velocity.y += jumpVelocity;
@@ -48,29 +57,33 @@ void Entity::jump() {
 }
 
 void Entity::update(float deltaSeconds) {
-    position.x += velocity.x * deltaSeconds;
-    position.y += velocity.y * deltaSeconds;
-    if (position.y >= GetScreenHeight() - source.height) {
-        position.y = GetScreenHeight() - source.height;
-        velocity.y = 0;
-        isInAir = false;
-    } else {
-        velocity.y += gravityAcceleration * deltaSeconds;
-        isInAir = true;
-    }
-    if (!isInAir) {
-        runningTime += deltaSeconds;
-        if (runningTime >= updateTime) {
-            runningTime = runningTime - updateTime;
-            source.x = currentFrame * source.width;
-            currentFrame++;
-            if (currentFrame >= framesInSpritesheet) {
-                currentFrame = 0;
+    if (active) {
+        position.x += velocity.x * deltaSeconds;
+        position.y += velocity.y * deltaSeconds;
+        if (position.y >= GetScreenHeight() - source.height) {
+            position.y = GetScreenHeight() - source.height;
+            velocity.y = 0;
+            isInAir = false;
+        } else {
+            velocity.y += gravityAcceleration * deltaSeconds;
+            isInAir = true;
+        }
+        if (!isInAir) {
+            runningTime += deltaSeconds;
+            if (runningTime >= updateTime) {
+                runningTime = runningTime - updateTime;
+                source.x = currentFrame * source.width;
+                currentFrame++;
+                if (currentFrame >= framesInSpritesheet) {
+                    currentFrame = 0;
+                }
             }
         }
     }
 }
 
 void Entity::draw() {
-    DrawTextureRec(texturePtr->texture, source, position, WHITE);
+    if (active) {
+        DrawTextureRec(texturePtr->texture, source, position, WHITE);
+    }
 }

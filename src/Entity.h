@@ -19,6 +19,8 @@ public:
     void setX(float pixels);
     void setVelocityX(float pixelsPerSecond);
     void setJumpVelocity(float pixelsPerSecond);
+    bool getActive();
+    void setActive(bool value);
     void jump();
     virtual void update(float deltaSeconds);
     void draw();
@@ -32,6 +34,7 @@ private:
     int currentFrame;
     bool isInAir;
     float runningTime;
+    bool active;
 };
 
 #endif

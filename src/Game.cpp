@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-constexpr int enemyPoolSize{5};
+constexpr int enemyPoolSize{50}; // max number of enemies possible
 
 Game::Game(): enemies{enemyPoolSize}, enemySpawner{&enemies} {}
 

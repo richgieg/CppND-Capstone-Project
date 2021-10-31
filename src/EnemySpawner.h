@@ -1,3 +1,8 @@
+// EnemySpawner
+//
+// Responsible for spawning the game's enemies.
+//
+
 #ifndef _ENEMY_SPAWNER
 #define _ENEMY_SPAWNER
 
