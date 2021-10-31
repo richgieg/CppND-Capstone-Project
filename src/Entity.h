@@ -8,8 +8,6 @@ class Entity {
 public:
     Entity(std::string spritesheetFile, int rowsInSpritesheet, int columnsInSpritesheet, int framesInSpritesheet);
     ~Entity();
-    float getWidth();
-    float getHeight();
     void update(float deltaSeconds);
     void draw();
 private:

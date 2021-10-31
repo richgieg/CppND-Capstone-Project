@@ -18,14 +18,6 @@ Entity::~Entity() {
     UnloadTexture(texture);
 }
 
-float Entity::getWidth() {
-    return source.width;
-}
-
-float Entity::getHeight() {
-    return source.height;
-}
-
 void Entity::update(float deltaSeconds) {
     position.x += velocity.x * deltaSeconds;
     position.y += velocity.y * deltaSeconds;
