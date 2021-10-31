@@ -36,6 +36,6 @@ void Game::draw() {
     player.draw();
     enemies.draw();
     if (gameOver) {
-        DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), (Color){0, 0, 0, 200});
+        gameOverScreen.draw();
     }
 }

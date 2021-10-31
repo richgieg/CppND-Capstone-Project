@@ -11,6 +11,7 @@
 #include "Enemy.h"
 #include "EntityPool.h"
 #include "EnemySpawner.h"
+#include "GameOverScreen.h"
 
 class Game {
 public:
@@ -24,6 +25,7 @@ private:
     EntityPool<Enemy> enemies;
     EnemySpawner enemySpawner;
     bool gameOver;
+    GameOverScreen gameOverScreen;
 };
 
 #endif
