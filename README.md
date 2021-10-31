@@ -155,6 +155,8 @@ A good example of this is how the `Enemy` and `Player` classes inherit from `Ent
 See: `Entity.h`, `Player.h`, and `Enemy.h`
 
 ### Derived class functions override virtual base class functions.
+`Player` overrides the virtual `update` method of `Entity` in order to react to user input.
+
 See: `Player.h` line 14, `Player.cpp` line 8, `Entity.h` line 27, and `Entity.cpp` line 65
 
 ### Templates generalize functions in the project.
