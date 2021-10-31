@@ -15,21 +15,21 @@
                 "command": "C:/raylib/mingw/bin/mingw32-make.exe",
                 "args": [
                     "RAYLIB_PATH=C:/raylib/raylib",
-                    "PROJECT_NAME=game",
+                    "PROJECT_NAME=hipster-hop",
                     "OBJS=src/*.cpp",
                     "BUILD_MODE=DEBUG"
                 ]
             },
             "osx": {
                 "args": [
-                    "PROJECT_NAME=game",
+                    "PROJECT_NAME=hipster-hop",
                     "OBJS=src/*.cpp",
                     "BUILD_MODE=DEBUG"
                 ]
             },
             "linux": {
                 "args": [
-                    "PROJECT_NAME=game",
+                    "PROJECT_NAME=hipster-hop",
                     "RAYLIB_LIBTYPE=SHARED",
                     "OBJS=src/*.cpp",
                     "BUILD_MODE=DEBUG"
@@ -54,19 +54,19 @@
                 "command": "C:/raylib/mingw/bin/mingw32-make.exe",
                 "args": [
                     "RAYLIB_PATH=C:/raylib/raylib",
-                    "PROJECT_NAME=game",
+                    "PROJECT_NAME=hipster-hop",
                     "OBJS=src/*.cpp",
                 ]
             },
             "osx": {
                 "args": [
-                    "PROJECT_NAME=game",
+                    "PROJECT_NAME=hipster-hop",
                     "OBJS=src/*.cpp",
                 ]
             },
             "linux": {
                 "args": [
-                    "PROJECT_NAME=game",
+                    "PROJECT_NAME=hipster-hop",
                     "RAYLIB_LIBTYPE=SHARED",
                     "OBJS=src/*.cpp",
                 ]

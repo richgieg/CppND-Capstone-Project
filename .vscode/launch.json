@@ -8,7 +8,7 @@
           "name": "Debug",
           "type": "cppdbg",
           "request": "launch",
-          "program": "${workspaceFolder}/game",
+          "program": "${workspaceFolder}/hipster-hop",
           "args": [],
           "stopAtEntry": false,
           "cwd": "${workspaceFolder}",
@@ -42,10 +42,10 @@
           "cwd": "${workspaceFolder}",
           "environment": [],
           "externalConsole": false,
-          "program": "${workspaceFolder}/game",
+          "program": "${workspaceFolder}/hipster-hop",
           "MIMode": "gdb",
           "windows": {
-            "program": "${workspaceFolder}/game.exe",
+            "program": "${workspaceFolder}/hipster-hop.exe",
             "miDebuggerPath": "C:/raylib/mingw/bin/gdb.exe"
           },
           "osx": {
