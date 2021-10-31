@@ -190,3 +190,5 @@ encourage that they are managed by smart pointers.
 See: `Texture2DHandle.h` line 19
 
 ### The project uses smart pointers instead of raw pointers.
+See: `Entity.h` line 30, `ScrollingBackground.h` line 20, `TextureManager.h` lines 18 and 20,
+and `TextureManager.cpp` line 9
