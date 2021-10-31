@@ -111,7 +111,7 @@ are used so that the `Texture2DHandle` destructor is called automatically when n
 
 # Rubric
 
-This project addresses the following rubric items:
+This project addresses the rubric items below.
 
 ## Loops, Functions, I/O
 
